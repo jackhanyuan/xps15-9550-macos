@@ -547,8 +547,6 @@
 	<dict>
 		<key>Arguments</key>
 		<string>dart=0 nv_disable=1 kext-dev-mode=1 brcmfx-country=#a abm_firstpolldelay=16000 slide=163</string>
-		<key>DefaultVolume</key>
-		<string>MAC</string>
 		<key>Log</key>
 		<false/>
 		<key>NeverHibernate</key>
@@ -556,7 +554,7 @@
 		<key>Secure</key>
 		<false/>
 		<key>Timeout</key>
-		<integer>0</integer>
+		<integer>10</integer>
 		<key>XMPDetection</key>
 		<false/>
 	</dict>

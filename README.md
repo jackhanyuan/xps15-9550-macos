@@ -28,9 +28,13 @@
 
 ### 其他
 
+#### 开机启动macOS
+
+如果想要开机直接启动macOS，可以使用Clover Configurator-Boot中设置Default Boot Volume为你的macOS盘的名字，并且设置Timeout为0。
+
 #### 触摸板
 
-clover中的触摸板文件来自[gunslinger](https://github.com/gunslinger23/XPS15-9560-High-Sierra)，但我后来又安装了[OS-X-Voodoo-PS2-Controller](https://github.com/RehabMan/OS-X-Voodoo-PS2-Controller/wiki/How-to-Install)所以我不太确定目前是哪个在起作用。
+clover中的触摸板文件来自[gunslinger](https://github.com/gunslinger23/XPS15-9560-High-Sierra)，但我后来又安装了[OS-X-Voodoo-PS2-Controller](https://github.com/RehabMan/OS-X-Voodoo-PS2-Controller/wiki/How-to-Install)所以我不太确定目前是哪个在起作用，之后才从13.3升级到13.4。
 
 目前已知的情况是前者在10.13.3时是支持三指左右切换桌面，但触摸板设置空白。
 
@@ -38,7 +42,7 @@ clover中的触摸板文件来自[gunslinger](https://github.com/gunslinger23/XP
 
 在安装过程中可能会因此Brcm出错，遇到这种情况请把`kexts/other`中`BrcmFirmwareData.kext`和`BrcmPatchRAM2.kext`暂时移走，待安装完成后再移动回来。
 
-### does printf work？
+#### does printf work？
 
 安装中若遇到does printf work，请根据[slide_calc](https://github.com/wmchris/DellXPS15-9550-OSX/blob/10.13/Additional/slide_calc.md)方法自行计算slide。
 
