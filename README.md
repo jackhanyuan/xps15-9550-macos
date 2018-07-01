@@ -1,30 +1,25 @@
 ### 配置
 
-6300hq 4+4 GB pm961 256g 4k屏
+6300hq 8+8 GB pm961 512g 1080p
 
 ### 当前运行情况
 
-- 10.13.4 ，型号为macbook pro 13,1（建议使用Clover Configurator选择适合的型号）
-- HDMI外接显示器正常
+- 10.13.5 ，型号为macbook pro 13,3（使用Clover Configurator选择适合的型号）
+- HDMI外接显示器正常（升级后未测试）
 - 不知是否真实睡眠，总之黑屏唤醒正常
-- 电量百分比显示正常
-- 触摸板设置正常显示但大部分功能不可用（不支持各种手势）
-- 触摸板可双击选择和拖动窗口（辅助功能-鼠标和触摸板-触摸板选项中开启拖移）
+- 电量百分比显示正常 （有时正常）
+- 触摸板功能正常（辅助功能-鼠标和触摸板-触摸板选项中开启拖移）
 - type-c接口接android手机无法正常使用
 
 ### 说明
 
 本Clover的配置主要来自[corenel](https://github.com/corenel/XPS9550-macOS)，驱动主要来自[gunslinger](https://github.com/gunslinger23/XPS15-9560-High-Sierra)。
 
-换了4k屏后发现win10下文字显示已足够清晰，至少代码显示足够清晰，当然更主要的原因是256g装两个系统实在是不够用，只好放弃macOS重回win10怀抱了。
-
-请注意pm981目前无法安装macos，别像我一样傻傻地陷入出错-安装的死循环中T T。。。当然论坛上有人用10.13.4将pm981作为从盘驱动成功，有评论表示仍然作为不了安装盘。之后有空会尝试下pm981到底能不能装10.13.4。
-
 ---
 
 本文只是简单介绍一些安装情况和问题，具体教程请参考Github上其他repo。
 
-需要使用该Clover请先把boot参数里的`slide=163`去掉并且加入`-v`显示调试信息。
+需要使用该Clover用于安装系统请使用其他repo `config.plist`中的boot参数。
 
 个人不太建议将kext放到`L/E`或`S/L/E`中，因为如果是这些kext出现了问题，将导致系统难以恢复（虽然曾经通过重装系统恢复过且个人文件都在）。最保险的方式还是就把这些kext放在Clover里，这样即使该Clover出现了问题，也可以通过U盘Clover来启动系统。
 
@@ -36,17 +31,16 @@
 
 #### 触摸板
 
-clover中的触摸板文件来自[gunslinger](https://github.com/gunslinger23/XPS15-9560-High-Sierra)，但我后来又安装了[OS-X-Voodoo-PS2-Controller](https://github.com/RehabMan/OS-X-Voodoo-PS2-Controller/wiki/How-to-Install)，之后才从13.3升级到13.4。所以不太确定目前是哪个在起作用，
-
-目前已知的情况是前者在10.13.3时是支持三指左右切换桌面，但触摸板设置空白。
+目前触摸板驱动使用的是`ApplePS2SmartTouchPad.text`，虽然在触摸精确度上有些问题，但至少滚动体验要好于Voodoo。另外修改了拖动的参数，拖动完成后不会有300ms的延时了。
+有个问题是触摸板底部‘按键’区域无法直接识别到触摸，把虚拟按键面积设置为零并且允许按键区域触摸也没有用。
 
 #### Brcm出错
 
-在安装过程中可能会因此Brcm出错，遇到这种情况请把`kexts/other`中`BrcmFirmwareData.kext`和`BrcmPatchRAM2.kext`暂时移走，待安装完成后再移动回来。
+在安装过程中可能会遇到Brcm出错，遇到这种情况请把`kexts/other`中`BrcmFirmwareData.kext`和`BrcmPatchRAM2.kext`暂时移走，待安装完成后再移动回来。
 
-#### does printf work？
+#### unallocate area（忘了英文具体是啥了）
 
-安装中若遇到does printf work，请根据[slide_calc](https://github.com/wmchris/DellXPS15-9550-OSX/blob/10.13/Additional/slide_calc.md)方法自行计算slide。
+安装中若遇到无法分配区域的错误，请根据[slide_calc](https://github.com/wmchris/DellXPS15-9550-OSX/blob/10.13/Additional/slide_calc.md)方法自行计算slide。
 
 
 
