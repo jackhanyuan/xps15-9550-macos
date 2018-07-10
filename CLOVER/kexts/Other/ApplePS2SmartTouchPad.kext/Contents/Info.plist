@@ -622,9 +622,9 @@
 					<key>2FingersClickAction</key>
 					<integer>2</integer>
 					<key>ClickpadVirtualButtons</key>
-					<false/>
+					<true/>
 					<key>ClickpadVirtualButtonsArea</key>
-					<integer>0</integer>
+					<integer>100</integer>
 					<key>DisablePhysicalClicks</key>
 					<false/>
 					<key>EnablePointingOnVirtualButtonArea</key>
