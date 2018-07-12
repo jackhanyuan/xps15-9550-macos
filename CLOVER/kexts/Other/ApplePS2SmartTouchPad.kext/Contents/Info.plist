@@ -664,7 +664,7 @@
 						<integer>55</integer>
 					</dict>
 					<key>FingerPressDragStartTimeOut</key>
-					<integer>600</integer>
+					<integer>800</integer>
 				</dict>
 				<key>FingersPress</key>
 				<dict>
@@ -677,7 +677,7 @@
 					<key>5FingersPressAction</key>
 					<integer>13</integer>
 					<key>FingersPressTimeOut</key>
-					<integer>200</integer>
+					<integer>300</integer>
 				</dict>
 				<key>Keyboard</key>
 				<dict>
@@ -813,7 +813,7 @@
 					<key>AccelerationPrefValue</key>
 					<integer>0</integer>
 					<key>Clickpad2FingersMove</key>
-					<true/>
+					<false/>
 					<key>DisableTrackPointButton</key>
 					<true/>
 					<key>EnhancedAccelerationLevel</key>
@@ -853,9 +853,9 @@
 						<integer>2400</integer>
 					</dict>
 					<key>PointerSmoothLevel</key>
-					<integer>8</integer>
+					<integer>7</integer>
 					<key>PointerSmoothSamples</key>
-					<integer>4</integer>
+					<integer>3</integer>
 					<key>Sensitivity</key>
 					<dict>
 						<key>ELANv2</key>
@@ -930,13 +930,13 @@
 						<key>2FVerticalScroll</key>
 						<true/>
 						<key>Auto2FingScroll</key>
-						<false/>
+						<true/>
 						<key>Continuous2FingScroll</key>
 						<true/>
 						<key>Inertial2FingScroll</key>
 						<true/>
 						<key>ScrollSmoothSamples</key>
-						<integer>4</integer>
+						<integer>5</integer>
 						<key>Sling2FingScroll</key>
 						<false/>
 					</dict>
@@ -978,7 +978,7 @@
 						<key>EdgeScrollAccelMode</key>
 						<integer>0</integer>
 						<key>EdgeScrolling</key>
-						<true/>
+						<false/>
 						<key>EdgeVScrollAdaptArea</key>
 						<integer>4</integer>
 						<key>EdgeVScrollArea</key>
@@ -1103,7 +1103,7 @@
 					<key>12TapTimeOut</key>
 					<integer>180</integer>
 					<key>1FClickTimeOut</key>
-					<integer>140</integer>
+					<integer>100</integer>
 					<key>1FTapPressure</key>
 					<dict>
 						<key>ELANv2</key>
