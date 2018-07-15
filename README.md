@@ -7,7 +7,7 @@
 - 10.13.6 （可无痛升级，注意更新程序要运行两次）
 - 型号为macbook pro 13,3（请用Clover Configurator随机下序列）
 - HDMI外接显示器正常（升级后未测试）
-- Sleep正常（合盖基本不掉电）
+- sleep正常（合盖基本不掉电），hiberation不正常
 - 电量百分比显示正常
 - 触摸板功能正常
 - type-c接口接android手机无法正常使用
@@ -30,10 +30,18 @@
 
 #### 触摸板
 
-默认触摸板使用的是`VoodooI2c`的方案，个人测试感觉还行，就是手势不是太完美。可以考虑换成`ApplePS2SmartTouchPad.text`，注意换用该驱动需要把`kexts/Other`中的`VoodooI2C.kext`，`VoodooI2CHID.kext`和`VoodooPS2Controller.kext`都删了，不然会产生冲突。
+目前触摸板驱动使用的是`ApplePS2SmartTouchPad.text`，进行了一些配置：
+- 去除拖移锁定，现在双指拖移窗口或选取内容后不再有锁定延迟
+- 去除边缘滚动，默认情况开启了边缘滚动，导致底部和右边区域无法响应触摸
+- 提高触摸精度和速度
+- 改善双指滑动体验，不过依然没有WIN10来得爽
+- 降低操作延迟，默认配置给每一个操作都加了很多的延迟
 
-~~目前触摸板驱动使用的是`ApplePS2SmartTouchPad.text`，虽然在触摸精确度和延迟上不太好，但至少滚动体验要好于Voodoo。另外修改了拖动的参数，拖动完成后不会有300ms的延时了。
-有个问题是触摸板底部‘按键’区域无法直接识别到触摸，目前还没有找到解决方法。~~
+当然，也可以选择`PostInstall`中的`VoodooI2C`，其优缺点如下：
+- 更好的三指手势体验
+- 更好的触摸精度
+- 双指轻触需要一定按压力度才能响应
+- 双指滑动体验一般，有掉帧情况
 
 #### Brcm出错
 
@@ -43,7 +51,7 @@
 
 安装WIN10后，默认的EFI分区才100MB，而macOS要求的EFI分区大小至少是200MB，因此会出现无法为macOS新建分区的情况。解决方法就是想办法扩大EFI分区就可以了。
 
-#### unallocate area（忘了英文具体是啥了）
+#### unallocate area（忘了英文具体是啥了，现在也应该不会有这个问题了）
 
 安装中若遇到无法分配区域的错误，请根据[slide_calc](https://github.com/wmchris/DellXPS15-9550-OSX/blob/10.13/Additional/slide_calc.md)方法自行计算slide。
 
