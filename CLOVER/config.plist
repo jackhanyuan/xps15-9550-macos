@@ -644,23 +644,19 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>abm_firstpolldelay=5000 nv_disable=1 dart=0 brcmfx-country=#a -v darkwake=no</string>
+		<string>dart=0 nv_disable=1 -igfxbeta -v brcmfx-country=#a -lilubetaall kext-dev-mode=1</string>
 		<key>DefaultVolume</key>
 		<string>LastBootedVolume</string>
 		<key>Log</key>
 		<false/>
 		<key>NeverHibernate</key>
-		<false/>
-		<key>NoEarlyProgress</key>
-		<true/>
-		<key>RtcHibernateAware</key>
 		<true/>
 		<key>Secure</key>
 		<false/>
 		<key>Timeout</key>
 		<integer>-1</integer>
 		<key>XMPDetection</key>
-		<string>Yes</string>
+		<false/>
 	</dict>
 	<key>BootGraphics</key>
 	<dict>
@@ -820,6 +816,20 @@
 				AQAAAA==
 				</data>
 			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>layout-id=2</string>
+				<key>Device</key>
+				<string>HDA</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Key</key>
+				<string>layout-id</string>
+				<key>Value</key>
+				<data>
+				AgAAAA==
+				</data>
+			</dict>
 		</array>
 		<key>USB</key>
 		<dict>
@@ -880,7 +890,7 @@
 			<true/>
 		</dict>
 		<key>Theme</key>
-		<string>Nightwish</string>
+		<string>SimpleThemeDark</string>
 	</dict>
 	<key>Graphics</key>
 	<dict>
@@ -910,6 +920,7 @@
 		<key>ForceKextsToLoad</key>
 		<array>
 			<string>\System\Library\Extensions\IONetworkingFamily.kext</string>
+			<string>\System\Library\Extensions\AppleIntelSKLGraphicsFramebuffer.kext</string>
 		</array>
 		<key>KernelLapic</key>
 		<true/>
@@ -947,8 +958,6 @@
 				</data>
 				<key>InfoPlistPatch</key>
 				<false/>
-				<key>MatchOS</key>
-				<string>10.13.x</string>
 				<key>Name</key>
 				<string>com.apple.driver.AppleIntelSKLGraphicsFramebuffer</string>
 				<key>Replace</key>
@@ -958,29 +967,27 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Boot graphics glitch, 10.13 beta (based on denskop patch)</string>
+				<string>0x19160000/etc, 32MB BIOS, 19MB framebuffer 9MB cursor bytes (credit RehabMan)</string>
 				<key>Disabled</key>
 				<false/>
 				<key>Find</key>
 				<data>
-				AQAAdSI=
+				AAAgAgAAUAE=
 				</data>
 				<key>InfoPlistPatch</key>
 				<false/>
-				<key>MatchOS</key>
-				<string>10.13.x</string>
 				<key>Name</key>
-				<string>com.apple.iokit.IOGraphicsFamily</string>
+				<string>com.apple.driver.AppleIntelSKLGraphicsFramebuffer</string>
 				<key>Replace</key>
 				<data>
-				AQAA6yI=
+				AAAwAQAAkAA=
 				</data>
 			</dict>
 			<dict>
 				<key>Comment</key>
 				<string>eDP, port 0000, 0x191e0000, 0x19160000, 0x19260000, 0x19270000, 0x191b0000, 0x19160002, 0x19260002, 0x191e0003, 0x19260004, 0x19270004, 0x193b0005 credit syscl</string>
 				<key>Disabled</key>
-				<false/>
+				<true/>
 				<key>Find</key>
 				<data>
 				AAAIAAIAAACYAAAAAQUJAAAEAAA=
@@ -993,20 +1000,6 @@
 				<data>
 				AAAIAAAEAACYAAAAAQUJAAAEAAA=
 				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>10.12.2 fudge USB 3.1 device ID</string>
-				<key>Disabled</key>
-				<false/>
-				<key>Find</key>
-				<string>30783135623638303836</string>
-				<key>InfoPlistPatch</key>
-				<true/>
-				<key>Name</key>
-				<string>AppleUSBXHCIPCI</string>
-				<key>Replace</key>
-				<string>30783135623538303836</string>
 			</dict>
 			<dict>
 				<key>Comment</key>
