@@ -714,7 +714,7 @@
 					<key>5FingersPinchAction</key>
 					<integer>3</integer>
 					<key>CircularRotate</key>
-					<true/>
+					<false/>
 					<key>DisableTPadOnLIDClose</key>
 					<true/>
 					<key>MaxTouchEndDelta</key>
@@ -833,7 +833,7 @@
 						<key>FocalTech</key>
 						<integer>12</integer>
 						<key>Synaptics</key>
-						<integer>10</integer>
+						<integer>12</integer>
 					</dict>
 					<key>PointerCustomAcceleration2</key>
 					<dict/>
@@ -930,13 +930,13 @@
 						<key>2FVerticalScroll</key>
 						<true/>
 						<key>Auto2FingScroll</key>
-						<true/>
+						<false/>
 						<key>Continuous2FingScroll</key>
 						<false/>
 						<key>Inertial2FingScroll</key>
 						<true/>
 						<key>ScrollSmoothSamples</key>
-						<integer>5</integer>
+						<integer>4</integer>
 						<key>Sling2FingScroll</key>
 						<false/>
 					</dict>
@@ -991,7 +991,7 @@
 					<key>InertialScrollDelay</key>
 					<integer>8</integer>
 					<key>InertialScrollDepth</key>
-					<integer>3</integer>
+					<integer>2</integer>
 					<key>NoInertiaForHScroll</key>
 					<true/>
 					<key>ScrollAccelDelay</key>
@@ -1016,9 +1016,9 @@
 					<key>ScrollLevelAtBoot</key>
 					<integer>0</integer>
 					<key>ScrollLevelFactor</key>
-					<integer>2</integer>
+					<integer>1</integer>
 					<key>ScrollLevelGranularity</key>
-					<integer>40</integer>
+					<integer>50</integer>
 					<key>ScrollMaxIdleDetectTimeout</key>
 					<integer>500</integer>
 					<key>ScrollMaxIdleStateDelta</key>
@@ -1090,13 +1090,13 @@
 					<key>EdgeSwipes</key>
 					<false/>
 					<key>EdgeSwipes2Ways</key>
-					<true/>
+					<false/>
 					<key>EdgeSwipesResetPointer</key>
 					<true/>
 					<key>MultiFingerSwipesDeltaX</key>
-					<integer>100</integer>
+					<integer>120</integer>
 					<key>MultiFingerSwipesDeltaY</key>
-					<integer>40</integer>
+					<integer>100</integer>
 				</dict>
 				<key>Tapping</key>
 				<dict>
