@@ -6,7 +6,7 @@
 
 - 10.14 PB4 18A336e（可从10.13无痛升级，注意更新程序要运行两次）
 - 型号为macbook pro 13,3（请用 Clover Configurator 随机下序列）
-- ~~HDMI外接显示器正常（升级后未测试）~~
+- ~~HDMI外接显示器正常~~
 - Sleep正常（合盖测试两小时不到1%），Hiberation不正常
 - 电量百分比显示正常（感谢 scottsanett）
 - 触摸板功能正常 
@@ -18,6 +18,8 @@
 配置主要来自[scottsanett/M5510-4K-High-Sierra-Installation](https://github.com/scottsanett/M5510-4K-High-Sierra-Installation)
 
 ---
+
+1080p建议先别升10.14，Mojave似乎把Subpixel字体渲染移除了，字体显示效果很差。
 
 本文只是简单介绍一些安装情况和问题，具体教程请参考Github上其他repo。
 
