@@ -23,9 +23,9 @@
 #### 双指滚动优化
 
 ```
-// 根据力度滚动，体验一般
+// 根据力度滚动
 <key>Auto2FingScroll</key>
-<false/>
+<true/>
 
 // 持续滚动
 <key>Continuous2FingScroll</key>
@@ -33,20 +33,29 @@
 
 // 更高的值并不一定会更顺滑
 <key>ScrollSmoothSamples</key>
-<integer>4</integer>
+<integer>3</integer>
+
+// 控制完成惯性位移需要的时间，值越大惯性位移越慢
+// 此项并不会增加惯性的距离，因此太大的值会导致位移过慢而掉帧
+<key>InertialScrollDelay</key>
+<integer>8</integer>
 
 // 应该跟滚动流畅度有关，原贴没此项信息
 <key>InertialScrollDepth</key>
 <integer>2</integer>
 
+// 这个项意思是滑动的加速位移需要在多少时间内完成，值越小滑动速度越快
+<key>ScrollAccelDelay</key>
+<integer>3</integer>
+
 // 调节滚动速度，增加以提高
 <key>ScrollLevelGranularity</key>
-<integer>50</integer>
+<integer>60</integer>
 
 // 滚动停止检测，如果需要短距离快速滑动可以增加该项值
 // 问题是会导致轻滑体验极差
 <key>ScrollStopDetectSamples</key>
-<integer>1</integer>
+<integer>2</integer>
 ```
 
 #### 触摸手势

@@ -796,7 +796,7 @@
 					<key>PinchZoomDelta</key>
 					<integer>300</integer>
 					<key>Rotation</key>
-					<true/>
+					<false/>
 					<key>RotationDelta</key>
 					<integer>350</integer>
 					<key>RotationMaxCFingDelta</key>
@@ -833,7 +833,7 @@
 						<key>FocalTech</key>
 						<integer>12</integer>
 						<key>Synaptics</key>
-						<integer>10</integer>
+						<integer>14</integer>
 					</dict>
 					<key>PointerCustomAcceleration2</key>
 					<dict/>
@@ -936,7 +936,7 @@
 						<key>Inertial2FingScroll</key>
 						<true/>
 						<key>ScrollSmoothSamples</key>
-						<integer>5</integer>
+						<integer>3</integer>
 						<key>Sling2FingScroll</key>
 						<false/>
 					</dict>
@@ -991,11 +991,11 @@
 					<key>InertialScrollDelay</key>
 					<integer>8</integer>
 					<key>InertialScrollDepth</key>
-					<integer>3</integer>
+					<integer>2</integer>
 					<key>NoInertiaForHScroll</key>
 					<true/>
 					<key>ScrollAccelDelay</key>
-					<integer>3</integer>
+					<integer>4</integer>
 					<key>ScrollDirectionSamples</key>
 					<dict>
 						<key>ELANv2</key>
@@ -1016,9 +1016,9 @@
 					<key>ScrollLevelAtBoot</key>
 					<integer>0</integer>
 					<key>ScrollLevelFactor</key>
-					<integer>2</integer>
+					<integer>1</integer>
 					<key>ScrollLevelGranularity</key>
-					<integer>40</integer>
+					<integer>60</integer>
 					<key>ScrollMaxIdleDetectTimeout</key>
 					<integer>500</integer>
 					<key>ScrollMaxIdleStateDelta</key>
@@ -1039,7 +1039,7 @@
 						<integer>400</integer>
 					</dict>
 					<key>ScrollStopDetectSamples</key>
-					<integer>1</integer>
+					<integer>2</integer>
 					<key>SlingScrollStartTimeOut</key>
 					<integer>800</integer>
 					<key>SlingTriggerArea</key>
@@ -1088,15 +1088,15 @@
 					<key>EdgeSwipeTop</key>
 					<integer>10</integer>
 					<key>EdgeSwipes</key>
-					<true/>
+					<false/>
 					<key>EdgeSwipes2Ways</key>
 					<false/>
 					<key>EdgeSwipesResetPointer</key>
 					<true/>
 					<key>MultiFingerSwipesDeltaX</key>
-					<integer>100</integer>
+					<integer>80</integer>
 					<key>MultiFingerSwipesDeltaY</key>
-					<integer>40</integer>
+					<integer>120</integer>
 				</dict>
 				<key>Tapping</key>
 				<dict>
