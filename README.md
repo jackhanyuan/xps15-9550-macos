@@ -45,7 +45,7 @@
 
 #### 触摸板
 
-目前触摸板使用的是`VoodooI2C`，注意使用`VoodooI2C`就不要再加 RehabMan 的`VoodooPS2Controller`了。这个驱动有个问题是**双击打开右键菜单需要两个手指先后触碰触摸板**才行。
+目前触摸板使用的是`VoodooI2C`，这个驱动有个问题是**双击打开右键菜单需要两个手指先后触碰触摸板**才行。
 
 默认的VoodooI2C因为一些原因无法在10.14下使用（参考 [Kernel panic on startup with macOS Mojave Beta 1](https://github.com/alexandred/VoodooI2C/issues/70)），本Repo使用的`VoodooI2C`来自上贴中的[stevezhengshiqi](https://github.com/stevezhengshiqi)，这个可以正常使用。
 
