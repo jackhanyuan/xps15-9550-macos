@@ -660,8 +660,10 @@
 	</dict>
 	<key>BootGraphics</key>
 	<dict>
+		<key>DefaultBackgroundColor</key>
+		<string>0x000000</string>
 		<key>EFILoginHiDPI</key>
-		<integer>2</integer>
+		<integer>1</integer>
 		<key>UIScale</key>
 		<integer>2</integer>
 	</dict>
@@ -920,7 +922,6 @@
 		<key>ForceKextsToLoad</key>
 		<array>
 			<string>\System\Library\Extensions\IONetworkingFamily.kext</string>
-			<string>\System\Library\Extensions\AppleIntelSKLGraphicsFramebuffer.kext</string>
 		</array>
 		<key>KernelLapic</key>
 		<true/>
@@ -949,9 +950,33 @@
 		<array>
 			<dict>
 				<key>Comment</key>
+				<string>Prevent Apple I2C kexts from attaching to I2C controllers, credit CoolStar</string>
+				<key>Name</key>
+				<string>com.apple.driver.AppleIntelLpssI2C</string>
+				<key>Find</key>
+				<data>SU9LaXQ=</data>
+				<key>Replace</key>
+				<data>SU9LaXM=</data>
+				<key>InfoPlistPatch</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Prevent Apple I2C kexts from attaching to I2C controllers, credit CoolStar</string>
+				<key>Name</key>
+				<string>com.apple.driver.AppleIntelLpssI2CController</string>
+				<key>Find</key>
+				<data>SU9LaXQ=</data>
+				<key>Replace</key>
+				<data>SU9LaXM=</data>
+				<key>InfoPlistPatch</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>Comment</key>
 				<string>1536MB -&gt; 2048MB for HD520_530_540 Mobile</string>
 				<key>Disabled</key>
-				<false/>
+				<true/>
 				<key>Find</key>
 				<data>
 				AQMDAwAAIAIAAFABAAAAYA==
@@ -971,7 +996,7 @@
 				<key>Comment</key>
 				<string>Change VRAM 1536 to 2048 for 0x19160000 (FB-VRAM Patcher v0.3, credit emyself)</string>
 				<key>Disabled</key>
-				<false/>
+				<true/>
 				<key>Find</key>
 				<data>
 				AAAAYIkdPSwIAEG/AAAAYA==
