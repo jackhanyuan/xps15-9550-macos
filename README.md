@@ -85,7 +85,19 @@ sudo echo "UUID=xxx none ntfs rw,auto,nobrowse" >> /etc/fstab
 
 改回使用内置扬声器就好了。
 
+#### 9. 单击和双击延迟
 
+See [is-it-possible-to-get-rid-of-the-delay-between-right-clicking-and-seeing-the-con](https://apple.stackexchange.com/questions/218179/is-it-possible-to-get-rid-of-the-delay-between-right-clicking-and-seeing-the-con)
 
+macOS 有一个用于检测延时的机制。单击的延迟是 `双击拖移` 造成的，双击的延迟是 `智能缩放` 造成的。
 
+因此，单击的延迟可以通过选择使用 `三指拖移` 来关闭，双击的延迟则可以通过关闭 `智能缩放` 来关闭。
 
+#### 10. 合盖睡眠
+
+```
+sudo pmset -a hibernatemode 0
+sudo pmset -a disksleep 0
+```
+
+SSD 耗电小而且 SSD 睡眠还有可能造成数据出错，因此没有使硬盘进入睡眠的必要。
