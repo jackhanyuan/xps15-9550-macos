@@ -1,12 +1,10 @@
-remove SSDT-TYPEC
-add SSDT-TB.aml
-remove SSDT-RMDGPU
-add SSDT-Disable_DGPU.aml
-remove SSDT-IGPU_Syspref
-add SSDT_IGPU_Syspref.aml
-replace SSDT-PTSWAK
-replace SSDT-WIFI_Syspref.aml
-replace SSDT-XHCI_Syspref.aml
-add SSDT-IGPU.aml
-remove SSDT-YTBT
-remove SSDT-HWP
+remove TYPEC
+remove RMDGPU
+remove SYTBT
+remove HWP
+remove HDEF
+remove NVME_Syspref
+replace PTSWAK
+replace XHCI_Syspref
+replace UPRW with PRW 
+add TB
