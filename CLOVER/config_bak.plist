@@ -131,16 +131,30 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change Method(GPRW,2,N) to XPRW, pair with SSDT-PRW.aml</string>
+					<string>Rename method UPRW to XPRW and use with SSDT-UPRW.aml to fix USB "instant wake" on sleep</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
 					<data>
-					R1BSVwI=
+					FBJVUFJXAHA=
 					</data>
 					<key>Replace</key>
 					<data>
-					WFBSVwI=
+					FBJYUFJXAHA=
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>Rename method GPRW to YPRW and use with SSDT-UPRW.aml to fix USB "instant wake" on sleep</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					FEAGR1BSVwI=
+					</data>
+					<key>Replace</key>
+					<data>
+					FEAGWVBSVwI=
 					</data>
 				</dict>
 				<dict>
@@ -307,6 +321,20 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
+					<string>Device SBTN rename to SLPB pair with SSDT-SLPB - credit syscl</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					U0JUTg==
+					</data>
+					<key>Replace</key>
+					<data>
+					U0xQQg==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
 					<string>Rename HS12 -&gt; HS92 to avoid the patchmatic error, pair with SSDT-TB.aml</string>
 					<key>Disabled</key>
 					<false/>
@@ -348,7 +376,9 @@
 			<false/>
 			<key>Generate</key>
 			<dict>
-				<key>PluginType</key>
+				<key>CStates</key>
+				<true/>
+				<key>PStates</key>
 				<true/>
 			</dict>
 			<key>PluginType</key>
@@ -362,7 +392,9 @@
 			<string>SSDT-WIFI_Syspref.aml</string>
 			<string>SSDT-NVME_Syspref.aml</string>
 			<string>SSDT_IGPU_Syspref.aml</string>
+			<string>SSDT-Disable_DGPU.aml</string>
 			<string>SSDT-IGPU.aml</string>
+			<string>SSDT-UIAC-9550.aml</string>
 			<string>SSDT-XOSI.aml</string>
 			<string>SSDT-Config.aml</string>
 			<string>SSDT-SMBUS.aml</string>
@@ -393,7 +425,7 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>dart=0 darkwake=no -v brcmfx-country=#a agdpmod=vit9696 -lilubetaall</string>
+		<string>dart=0 darkwake=no agdpmod=vit9696 -v brcmfx-country=#a -lilubetaall keepsyms=1 -ngfxbeta -disablegfxfirmware</string>
 		<key>Debug</key>
 		<false/>
 		<key>DefaultVolume</key>
@@ -429,18 +461,15 @@
 	<dict>
 		<key>Properties</key>
 		<dict>
-			<key>PciRoot(0x0)/Pci(0x1f,0x3)</key>
-			<dict>
-				<key>layout-id</key>
-				<data>
-				SAAAAA==
-				</data>
-			</dict>
 			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
 			<dict>
 				<key>AAPL,ig-platform-id</key>
 				<data>
-				BgAbGQ==
+				AAAbGQ==
+				</data>
+				<key>device-id</key>
+				<data>
+				FhkAAA==
 				</data>
 				<key>disable-external-gpu</key>
 				<data>
@@ -450,7 +479,35 @@
 				<data>
 				AQAAAA==
 				</data>
-				<key>framebuffer-fbmem</key>
+				<key>framebuffer-con2-busid</key>
+				<data>
+				AAAAAA==
+				</data>
+				<key>framebuffer-con2-enable</key>
+				<data>
+				AQAAAA==
+				</data>
+				<key>framebuffer-con2-flags</key>
+				<data>
+				AAAAAA==
+				</data>
+				<key>framebuffer-con2-index</key>
+				<data>
+				/////w==
+				</data>
+				<key>framebuffer-con2-pipe</key>
+				<data>
+				AAAAAA==
+				</data>
+				<key>framebuffer-con2-type</key>
+				<data>
+				AQAAAA==
+				</data>
+				<key>framebuffer-con3-enable</key>
+				<data>
+				AQAAAA==
+				</data>
+				<key>framebuffer-con3-flags</key>
 				<data>
 				AAAAAA==
 				</data>
@@ -458,9 +515,13 @@
 				<data>
 				AQAAAA==
 				</data>
-				<key>framebuffer-stolenmem</key>
+				<key>framebuffer-pipecount</key>
 				<data>
-				AABgAg==
+				AgAAAA==
+				</data>
+				<key>framebuffer-portcount</key>
+				<data>
+				AgAAAA==
 				</data>
 				<key>framebuffer-unifiedmem</key>
 				<data>
@@ -533,6 +594,18 @@
 	</dict>
 	<key>Graphics</key>
 	<dict>
+		<key>EDID</key>
+		<dict>
+			<key>Custom</key>
+			<data>
+			AP///////wBNEHYUAAAAADEaAQSlIxN4DgXup1Q0uyULSVIAAAAB
+			AQEBAQEBAQEBAQEBAQEBTdAAoPBwPoAwIDUAWsIQAAAYAAAAAAAA
+			AAAAAAAAAAAAAAAAAAAA/gBZMlhORIBMUTE1NkQxAAAAAAACQQMo
+			ABIAAAsBCiAgAJs=
+			</data>
+			<key>Inject</key>
+			<true/>
+		</dict>
 		<key>Inject</key>
 		<dict>
 			<key>AMD</key>
@@ -583,6 +656,24 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
+				<string>eDP, port 0000, 0x191e0000, 0x19160000, 0x19260000, 0x19270000, 0x191b0000, 0x19160002, 0x19260002, 0x191e0003, 0x19260004, 0x19270004, 0x193b0005 credit syscl</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				AAAIAAIAAACYAAAAAQUJAAAEAAA=
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>Name</key>
+				<string>com.apple.driver.AppleIntelSKLGraphicsFramebuffer</string>
+				<key>Replace</key>
+				<data>
+				AAAIAAAEAACYAAAAAQUJAAAEAAA=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
 				<string>Enable BT4LE-Handoff-Hotspot</string>
 				<key>Disabled</key>
 				<false/>
@@ -597,22 +688,6 @@
 				<key>Replace</key>
 				<data>
 				Qb4PAAAA60Q=
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>disable port limit in XHCI kext (credit PMHeart)</string>
-				<key>Find</key>
-				<data>
-				g/sPD4MDBQAA
-				</data>
-				<key>MatchOS</key>
-				<string>10.14.x</string>
-				<key>Name</key>
-				<string>com.apple.driver.usb.AppleUSBXHCI</string>
-				<key>Replace</key>
-				<data>
-				g/sPkJCQkJCQ
 				</data>
 			</dict>
 		</array>
