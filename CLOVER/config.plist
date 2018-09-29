@@ -131,20 +131,6 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change Method(GPRW,2,N) to XPRW, pair with SSDT-PRW.aml</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>
-					R1BSVwI=
-					</data>
-					<key>Replace</key>
-					<data>
-					WFBSVwI=
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
 					<string>change Method(_PTS,1,N) to ZPTS, pair with SSDT-PTSWAK.aml</string>
 					<key>Disabled</key>
 					<false/>
@@ -309,7 +295,7 @@
 					<key>Comment</key>
 					<string>Rename HS12 -&gt; HS92 to avoid the patchmatic error, pair with SSDT-TB.aml</string>
 					<key>Disabled</key>
-					<false/>
+					<true/>
 					<key>Find</key>
 					<data>
 					SFMxMg==
@@ -319,7 +305,89 @@
 					SFM5Mg==
 					</data>
 				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>Rename method UPRW to XPRW and use with SSDT-UPRW.aml to fix USB "instant wake" on sleep</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					FBJVUFJXAHA=
+					</data>
+					<key>Replace</key>
+					<data>
+					FBJYUFJXAHA=
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>Rename method GPRW to YPRW and use with SSDT-UPRW.aml to fix USB "instant wake" on sleep</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					FEAGR1BSVwI=
+					</data>
+					<key>Replace</key>
+					<data>
+					FEAGWVBSVwI=
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>(RP15 only) Rename _RMV to XRMV and use with SSDT-TYPC.aml for USB-C hot plug support</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					X1JNVgCgFpCTVEJUUwGTU0JOUlRCVVOkVEFS
+					U6EGpEhQQ0UULUhQTUUIoCaQkpNWRElEDP//
+					//+TUE1TWAGGUFhTWAoCcAFQTVNYcAFQU1BY
+					FCpfSU5JAHBMVFIxTFRSWnBQTUwxTE1TTHBQ
+					TkwxTE5TTHBPQkYxT0JGWhQPX1BSVwCkR1BS
+					VwppCgQUFl9QUlQAoApQSUNNpEFSMTKkUFIx
+					MluCRztSUDE2
+					</data>
+					<key>Replace</key>
+					<data>
+					WFJNVgCgFpCTVEJUUwGTU0JOUlRCVVOkVEFS
+					U6EGpEhQQ0UULUhQTUUIoCaQkpNWRElEDP//
+					//+TUE1TWAGGUFhTWAoCcAFQTVNYcAFQU1BY
+					FCpfSU5JAHBMVFIxTFRSWnBQTUwxTE1TTHBQ
+					TkwxTE5TTHBPQkYxT0JGWhQPX1BSVwCkR1BS
+					VwppCgQUFl9QUlQAoApQSUNNpEFSMTKkUFIx
+					MluCRztSUDE2
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>Rename XTBT to YTBT and use with SSDT-YTBT.aml for USB-C hot plug</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					pABYVEJUVEJTRUNQR04=
+					</data>
+					<key>Replace</key>
+					<data>
+					pABZVEJUVEJTRUNQR04=
+					</data>
+				</dict>
 			</array>
+			<dict>
+					<key>Comment</key>
+					<string>Device SBTN rename to SLPB pair with SSDT-SLPB - credit syscl</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					U0JUTg==
+					</data>
+					<key>Replace</key>
+					<data>
+					U0xQQg==
+					</data>
+				</dict>
 		</dict>
 		<key>DropTables</key>
 		<array>
@@ -358,17 +426,15 @@
 		</dict>
 		<key>SortedOrder</key>
 		<array>
-			<string>SSDT-XHCI_Syspref.aml</string>
-			<string>SSDT-WIFI_Syspref.aml</string>
-			<string>SSDT-NVME_Syspref.aml</string>
 			<string>SSDT_IGPU_Syspref.aml</string>
-			<string>SSDT-IGPU.aml</string>
+			<string>SSDT-RMDGPU.aml</string>
 			<string>SSDT-XOSI.aml</string>
 			<string>SSDT-Config.aml</string>
 			<string>SSDT-SMBUS.aml</string>
 			<string>SSDT-MCHC.aml</string>
 			<string>SSDT-ALS0.aml</string>
 			<string>SSDT-DMAC.aml</string>
+			<string>SSDT-HWP.aml</string>
 			<string>SSDT-PMCR.aml</string>
 			<string>SSDT-MEM2.aml</string>
 			<string>SSDT-FANS.aml</string>
@@ -380,7 +446,8 @@
 			<string>SSDT-UPRW.aml</string>
 			<string>SSDT-PTSWAK.aml</string>
 			<string>SSDT-HDEF.aml</string>
-			<string>SSDT-TB.aml</string>
+			<string>SSDT-YTBT.aml</string>
+			<string>SSDT-TYPC.aml</string>
 			<string>SSDT-I2C.aml</string>
 			<string>SSDT-ADP1.aml</string>
 			<string>SSDT-BATC.aml</string>
@@ -421,7 +488,7 @@
 	<key>CPU</key>
 	<dict>
 		<key>HWPEnable</key>
-		<false/>
+		<true/>
 		<key>UseARTFrequency</key>
 		<false/>
 	</dict>
@@ -548,7 +615,7 @@
 		<key>AppleIntelCPUPM</key>
 		<false/>
 		<key>AppleRTC</key>
-		<false/>
+		<true/>
 		<key>Debug</key>
 		<false/>
 		<key>DellSMBIOSPatch</key>
@@ -561,6 +628,35 @@
 		<true/>
 		<key>KernelXCPM</key>
 		<false/>
+		<key>KernelToPatch</key>
+		<array>
+			<dict>
+				<key>Comment</key>
+				<string>MSR 0xE2 _xcpm_idle instant reboot(c) Pike R. Alpha</string>
+				<key>Find</key>
+				<data>
+				ILniAAAADzA=
+				</data>
+				<key>Replace</key>
+				<data>
+				ILniAAAAkJA=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Disable panic kext logging on 10.14 release kernel (credit Vandroiy)</string>
+				<key>Find</key>
+				<data>
+				igKEwHRC
+				</data>
+				<key>MatchOS</key>
+				<string>10.14.x</string>
+				<key>Replace</key>
+				<data>
+				igKEwOtC
+				</data>
+			</dict>
+		</array>
 		<key>KextsToPatch</key>
 		<array>
 			<dict>
@@ -583,6 +679,22 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
+				<string>USB Port limit patch 10.14 (credits FredWst)</string>
+				<key>Disabled</key>
+				<true/>
+				<key>Find</key>
+				<data>
+				g/sPD4MDBQAA
+				</data>
+				<key>Name</key>
+				<string>com.apple.driver.usb.AppleUSBXHCI</string>
+				<key>Replace</key>
+				<data>
+				g/sPkJCQkJCQ
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
 				<string>Enable BT4LE-Handoff-Hotspot</string>
 				<key>Disabled</key>
 				<false/>
@@ -597,22 +709,6 @@
 				<key>Replace</key>
 				<data>
 				Qb4PAAAA60Q=
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>disable port limit in XHCI kext (credit PMHeart)</string>
-				<key>Find</key>
-				<data>
-				g/sPD4MDBQAA
-				</data>
-				<key>MatchOS</key>
-				<string>10.14.x</string>
-				<key>Name</key>
-				<string>com.apple.driver.usb.AppleUSBXHCI</string>
-				<key>Replace</key>
-				<data>
-				g/sPkJCQkJCQ
 				</data>
 			</dict>
 		</array>

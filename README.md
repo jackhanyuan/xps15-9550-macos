@@ -7,7 +7,7 @@
 - 10.14 正式版
 - 型号为 MacBook Pro (15-inch, 2016)
 - HDMI 和 Typec 热插拔外接显示器正常
-- Sleep 不正常
+- Sleep 正常
 - Hiberation 禁用（可以有，但没必要）
 - 电量百分比显示不正常，延迟很高
 - 触摸板使用 `VoodooI2C`
@@ -24,7 +24,7 @@
 
 配置主要来自[jardenliu/XPS15-9560-Mojave](https://github.com/jardenliu/XPS15-9560-Mojave)
 
-使用了[scottsanett/M5510-4K-High-Sierra-Installation](https://github.com/scottsanett/M5510-4K-High-Sierra-Installation) 的部分 `ACPI/patched` 和 `config.plist` 以适应 9550 以及支持 TypeC/雷电口 的热插拔
+删除了一些没用的 SSDT/DSDT，修改了一些 CPU 有关的 config.plist，换了一些 kext 驱动。
 
 ---
 
@@ -74,7 +74,9 @@ sudo echo "UUID=xxx none ntfs rw,auto,nobrowse" >> /etc/fstab
 
 #### 外接显示器
 
-这是以前遇到的问题。外接显示器如果无法工作，请参考此方法[To make external monitor works](https://github.com/corenel/XPS9550-macOS#tips)。
+这是以前遇到的问题。
+
+外接显示器如果无法工作，请参考此方法[To make external monitor works](https://github.com/corenel/XPS9550-macOS#tips)。
 
 **注** 如果没有在列表中找到你的`Board-ID`，就新增一条，设置 attribute 为 `none`。
 
@@ -98,3 +100,4 @@ sudo pmset -a disksleep 0
 sudo pmset -b tcpkeepalive 0
 ```
 
+瞎忙了一天才发现之前遇到的睡眠问题完全是因为我瞎删 SSDT 造成的 T T
