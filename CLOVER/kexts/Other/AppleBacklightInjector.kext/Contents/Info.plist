@@ -33,10 +33,7 @@
 			<key>ApplePanels</key>
 			<dict>
 				<key>F10T1476</key>
-				<data>
-				ABEAAAA0AFIAcwCUAL4A+gE2AXIBxQIvArkDYAQaBQoG
-				DgcQ
-				</data>
+				<data>ABEAAAA0AFIAcwCUAL4A+gE2AXIBxQIvArkDYAQaBQoGDgcQ</data>
 				<key>New item</key>
 				<string></string>
 			</dict>
@@ -51,7 +48,7 @@
 					<key>max</key>
 					<integer>255</integer>
 					<key>min</key>
-					<integer>40</integer>
+					<integer>20</integer>
 				</dict>
 				<key>commit</key>
 				<dict>
