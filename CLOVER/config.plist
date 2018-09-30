@@ -131,90 +131,6 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change Method(_PTS,1,N) to ZPTS, pair with SSDT-PTSWAK.aml</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>
-					X1BUUwE=
-					</data>
-					<key>Replace</key>
-					<data>
-					WlBUUwE=
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change Method(_PTS,1,S) to ZPTS, pair with SSDT-PTSWAK.aml</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>
-					X1BUUwk=
-					</data>
-					<key>Replace</key>
-					<data>
-					WlBUUwk=
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change Method(_WAK,1,N) to ZWAK, pair with SSDT-PTSWAK.aml</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>
-					X1dBSwE=
-					</data>
-					<key>Replace</key>
-					<data>
-					WldBSwE=
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change Method(_WAK,1,S) to ZWAK, pair with SSDT-PTSWAK.aml</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>
-					X1dBSwk=
-					</data>
-					<key>Replace</key>
-					<data>
-					WldBSwk=
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change Method(XWAK,0,N) to ZWAK, pair with SSDT-PTSWAK.aml</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>
-					WFdBSwA=
-					</data>
-					<key>Replace</key>
-					<data>
-					WldBSwA=
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change Method(XWAK,0,S) to ZWAK, pair with SSDT-PTSWAK.aml</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>
-					WFdBSwg=
-					</data>
-					<key>Replace</key>
-					<data>
-					WldBSwg=
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
 					<string>change _STA to XSTA in Device GPI0</string>
 					<key>Disabled</key>
 					<false/>
@@ -293,20 +209,6 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>Rename HS12 -&gt; HS92 to avoid the patchmatic error, pair with SSDT-TB.aml</string>
-					<key>Disabled</key>
-					<true/>
-					<key>Find</key>
-					<data>
-					SFMxMg==
-					</data>
-					<key>Replace</key>
-					<data>
-					SFM5Mg==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
 					<string>Rename method UPRW to XPRW and use with SSDT-UPRW.aml to fix USB "instant wake" on sleep</string>
 					<key>Disabled</key>
 					<false/>
@@ -374,20 +276,6 @@
 					</data>
 				</dict>
 			</array>
-			<dict>
-					<key>Comment</key>
-					<string>Device SBTN rename to SLPB pair with SSDT-SLPB - credit syscl</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>
-					U0JUTg==
-					</data>
-					<key>Replace</key>
-					<data>
-					U0xQQg==
-					</data>
-				</dict>
 		</dict>
 		<key>DropTables</key>
 		<array>
@@ -426,32 +314,27 @@
 		</dict>
 		<key>SortedOrder</key>
 		<array>
+			<string>SSDT-XHCI_Syspref.aml</string>
 			<string>SSDT_IGPU_Syspref.aml</string>
 			<string>SSDT-RMDGPU.aml</string>
 			<string>SSDT-XOSI.aml</string>
-			<string>SSDT-Config.aml</string>
-			<string>SSDT-SMBUS.aml</string>
+			<string>SSDT-PNLF.aml</string>
 			<string>SSDT-MCHC.aml</string>
 			<string>SSDT-ALS0.aml</string>
 			<string>SSDT-DMAC.aml</string>
-			<string>SSDT-HWP.aml</string>
 			<string>SSDT-PMCR.aml</string>
 			<string>SSDT-MEM2.aml</string>
 			<string>SSDT-FANS.aml</string>
 			<string>SSDT-DeepIdle.aml</string>
 			<string>SSDT-LPC.aml</string>
 			<string>SSDT-USBX.aml</string>
-			<string>SSDT-PNLF.aml</string>
 			<string>SSDT-BRT6.aml</string>
 			<string>SSDT-UPRW.aml</string>
-			<string>SSDT-PTSWAK.aml</string>
-			<string>SSDT-HDEF.aml</string>
 			<string>SSDT-YTBT.aml</string>
 			<string>SSDT-TYPC.aml</string>
 			<string>SSDT-I2C.aml</string>
 			<string>SSDT-ADP1.aml</string>
 			<string>SSDT-BATC.aml</string>
-			<string>SSDT-HPET.aml</string>
 			<string>SSDT-RMNE.aml</string>
 			<string>SSDT-SATA.aml</string>
 			<string>SSDT-ALC298.aml</string>
@@ -460,7 +343,7 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>dart=0 darkwake=no -v brcmfx-country=#a agdpmod=vit9696 -lilubetaall</string>
+		<string>agdpmod=vit9696 dart=0 brcmfx-country=#a -lilubetaall -v darkwake=no</string>
 		<key>Debug</key>
 		<false/>
 		<key>DefaultVolume</key>
@@ -472,7 +355,7 @@
 		<key>Secure</key>
 		<false/>
 		<key>SkipHibernateTimeout</key>
-		<false/>
+		<true/>
 		<key>Timeout</key>
 		<integer>-1</integer>
 		<key>XMPDetection</key>
@@ -626,13 +509,13 @@
 		<false/>
 		<key>KernelPm</key>
 		<true/>
-		<key>KernelXCPM</key>
-		<false/>
 		<key>KernelToPatch</key>
 		<array>
 			<dict>
 				<key>Comment</key>
 				<string>MSR 0xE2 _xcpm_idle instant reboot(c) Pike R. Alpha</string>
+				<key>Disabled</key>
+				<false/>
 				<key>Find</key>
 				<data>
 				ILniAAAADzA=
@@ -645,6 +528,8 @@
 			<dict>
 				<key>Comment</key>
 				<string>Disable panic kext logging on 10.14 release kernel (credit Vandroiy)</string>
+				<key>Disabled</key>
+				<false/>
 				<key>Find</key>
 				<data>
 				igKEwHRC
@@ -657,6 +542,8 @@
 				</data>
 			</dict>
 		</array>
+		<key>KernelXCPM</key>
+		<false/>
 		<key>KextsToPatch</key>
 		<array>
 			<dict>
@@ -686,6 +573,8 @@
 				<data>
 				g/sPD4MDBQAA
 				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
 				<key>Name</key>
 				<string>com.apple.driver.usb.AppleUSBXHCI</string>
 				<key>Replace</key>
