@@ -21,19 +21,13 @@
 
 ## 说明
 
-配置主要来自 [jardenliu/XPS15-9560-Mojave](https://github.com/jardenliu/XPS15-9560-Mojave) ，删除了一些 SSDT/DSDT，精简了一下 config.plist，换了一些 kext 驱动。更新记录请看 commit。
+配置主要来自 [jardenliu/XPS15-9560-Mojave](https://github.com/jardenliu/XPS15-9560-Mojave) 
 
 本 Repo 会尽量精简配置（如果精简后能日常使用一段时间，我就默认精简掉的东西是无用的），所以难免会出现一些问题，欢迎提 issue。
 
----
+本 Repo 只是简单介绍一些安装情况和问题，具体教程请参考 Github 上其他 repo（ kext 放在 clover 里就可以了 ）。
 
-### 其他说明
-
-本 Repo 只是简单介绍一些安装情况和问题，具体教程请参考 Github 上其他 repo。
-
-个人不太建议将 kext 放到`L/E`或`S/L/E`中，这些kext出现了问题将导致系统难以恢复。最保险的方式还是就把这些kext放在 Clover 里，这样即使该 Clover 出现了问题，也可以通过U盘 Clover 来启动系统。
-
-使用这个 Clover 在登录 Apple 账户之前，请先使用 `Clover Configurator` 随机下 `SMBIOS/System/Serial Number`。
+另外，使用这个 Clover 在登录 Apple 账户前，请先使用 `Clover Configurator` 随机下 `SMBIOS/System/Serial Number`。
 
 ## 问题
 
@@ -49,10 +43,6 @@
 
 另一种方式是勾选 `fast` 选项，勾选 `fast` 无法按任意键进入 Clover 界面
 
-### 驱动耳机
-
-默认下外放应该是正常的。耳机则需要安装 `PostInstall/ALC298PluginFix` ，直接运行 `install双击自动安装.command` 即可。
-
 ### 原生NTFS读写
 
 原生NTFS读写需要**关闭WIN10的Hiberation**：在 powershell 里运行 `powercfg -h off` 后重启一下。
@@ -65,28 +55,33 @@ sudo echo "UUID=xxx none ntfs rw,auto,nobrowse" >> /etc/fstab
 
 重启后，应该会在 finder 中看到 WIN10分区，如果没有可以在finder中 `command+shift+G` 进入 `/Volumes`，将其放入个人收藏中即可。
 
+### 驱动耳机
+
+默认下外放应该是正常的。耳机则需要安装 `PostInstall/ALC298PluginFix` ，直接运行 `install双击自动安装.command` 即可。
+
 ### 睡眠问题
 
 ```
 sudo pmset -a hibernatemode 0
 sudo pmset -a disksleep 0
 sudo pmset -b tcpkeepalive 0
+sudo pmset -b standbydelay 3600
 ```
 
-####CPU 变频
+### CPU 变频
 
 我的 CPU 是 `i5-6300hq`， `CPUFriendDataProvider.kext` 中的数据是针对这个 CPU 的。
 
-所以其他型号的 CPU 请自行寻找合适的 `CPUFriendDataProvider.kext` ，或者使用的 [CPUFriend的教程](https://github.com/acidanthera/CPUFriend/blob/master/Instructions.md) 。需要注意的是，你需要提供的是一个针对你的 CPU 型号**已经修改过的**一个 plist 文件。
+所以其他型号的 CPU 请自行寻找合适的 `CPUFriendDataProvider.kext` 或者使用 [CPUFriend的教程](https://github.com/acidanthera/CPUFriend/blob/master/Instructions.md) 。需要注意的是，你需要提供的是一个针对你的 CPU 型号**已经修改过的**一个 plist 文件。
 
-修改教程可以参考 [[开启完整HWP(SpeedShift)电源管理特性](http://bbs.pcbeta.com/viewthread-1737021-1-1.html)](http://bbs.pcbeta.com/viewthread-1737021-1-1.html)
+修改教程可以参考 [开启完整HWP(SpeedShift)电源管理特性](http://bbs.pcbeta.com/viewthread-1737021-1-1.html) 。
 
-###Framebuffer, USB 和 Audio
+### Framebuffer, USB 和 Audio
 
 请看 [Intel FB-Patcher v1.4.3](https://www.tonymacx86.com/threads/release-intel-fb-patcher-v1-4-3.254559/)
 
 ### 单指和双指的单击延迟
 
-See [is-it-possible-to-get-rid-of-the-delay-between-right-clicking-and-seeing-the-con](https://apple.stackexchange.com/questions/218179/is-it-possible-to-get-rid-of-the-delay-between-right-clicking-and-seeing-the-con)
+参考 [is-it-possible-to-get-rid-of-the-delay-between-right-clicking-and-seeing-the-con](https://apple.stackexchange.com/questions/218179/is-it-possible-to-get-rid-of-the-delay-between-right-clicking-and-seeing-the-con)
 
 macOS 有一个检测手势的延时。单指单击的延迟是 `双击拖移` 造成的，双指单击的延迟是 `智能缩放` 造成的。因此想要降低单击的延迟，前者可以改用 `三指拖移`，后者取消即可。
