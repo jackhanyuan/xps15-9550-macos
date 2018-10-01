@@ -1,33 +1,54 @@
-## 配置
+## Current State
 
 `i5-6300HQ` `16GB` `PM961 512G` `1080p` 
 
-### 当前运行情况
+### Features
 
-- 10.14 正式版，型号为 MacBook Pro (15-inch, 2016)
-- CPU 变频正常（最低 800 Mhz）
-- HDMI 和 Typec 热插拔外接显示器正常
+- 10.14 18A391
+- Model: MacBook Pro (15-inch, 2016)
+- CPU 变频正常
+- HDMI 和 TypeC 热插拔外接显示器正常
 - Sleep 正常，Hiberation 禁用（可以有，但没必要）
 - 电量显示正常
-- 触摸板使用 `VoodooI2C`
-- 外放和耳机正常
+- 触摸板使用 `VoodooI2C`，当前版本是 `v2.1.4`
+- 外放和耳机正常，耳机请使用 `PostInstall/ALC298PluginFix` 
 - 外接 ExFat 移动硬盘正常
-- 蓝牙鼠标正常，其他未测试
+- 蓝牙鼠标正常，其他蓝牙设备未测试
 
 ### 未测试
 
 - 雷电
 - SD卡（没这个需求，在 BIOS 里禁用了）
 
+## 更新记录
+
+#### 9.30
+
+使用 [Intel FB-Patcher v1.4.3](https://www.tonymacx86.com/threads/release-intel-fb-patcher-v1-4-3.254559/) 和 [[Guide] Intel Framebuffer patching using WhateverGreen](https://www.tonymacx86.com/threads/guide-intel-framebuffer-patching-using-whatevergreen.256490/)，生成了 `HD530` 的 framebuffer。据作者所说，使用这个配合 `WhateverGreen.kext` 后，不再需要任何跟 IGPU 和 HDMI 有关的 kext、补丁以及 Config 配置（所以我全删了），当然禁用独显的补丁 `SSDT-RMDGPU.aml` 还是需要的。
+
+使用 [Intel FB-Patcher v1.4.3](https://www.tonymacx86.com/threads/release-intel-fb-patcher-v1-4-3.254559/) 生成了 `USBPort.kext`，它要自己一个个测接口，不知什么原因我的 TypeC/雷电口没有在软件中显示。对照了下其他 USB 口的数据，发现和 [jardenliu/XPS15-9560-Mojave](https://github.com/jardenliu/XPS15-9560-Mojave) 的 `USBPower.kext` 中的一致，因此直接使用了他的。据作者说，使用这个 kext 后，可以把 `USBInjectAll.kext` 和 `SSDT-UIAC.aml` 删了。个人测试发现把 `SSDT-TYPC.aml` 和 `SSDT-YTBT.aml` 删了也没出现什么问题，所以也都删了。
+
+使用 [CPUFriend的教程](https://github.com/acidanthera/CPUFriend/blob/master/Instructions.md) 以及 [6300hq 的 plist](https://github.com/corenel/XPS9550-macOS/commit/7089feb37fbcf841c4cf7196153a2270185bc29c) 生成 `CPUFriendDataProvider.kext`。需要注意的是这个 plist 文件有点老。虽然效果不错，但是感觉会有更 native 的方式，以后尝试。
+
+### 9.29
+
+添加 `VirtualSMC` 删除 `FakeSMC*`
+
+- 移除 `SMCLightSensor.kext`，用于获取笔记本光感信息，没啥必要（默认设置会在 Console 疯狂输出）。
+
+- 移除 `SSDT-BATC.aml`，`SMCBatteryManager.text` 不需要这个补丁。
+
+更新 `VoodooI2C` 到 `v2.1.4`
+
 ## 说明
 
-配置主要来自 [jardenliu/XPS15-9560-Mojave](https://github.com/jardenliu/XPS15-9560-Mojave) 
+If you encounter any problem with my clover files, please 1. create a issue and 2. use [wmchris/DellXPS15-9500-OSX](https://github.com/wmchris/DellXPS15-9550-OSX) instead, witch is more stable. 
 
-本 Repo 会尽量精简配置（如果精简后能日常使用一段时间，我就默认精简掉的东西是无用的），所以难免会出现一些问题，欢迎提 issue。
+本配置文件基于 [jardenliu/XPS15-9560-Mojave](https://github.com/jardenliu/XPS15-9560-Mojave). 
 
-本 Repo 只是简单介绍一些安装情况和问题，具体教程请参考 Github 上其他 repo（ kext 放在 clover 里就可以了 ）。
+本 Repo 只是简单介绍一些安装情况和问题，具体教程请参考 Github 上其他 repo。
 
-另外，使用这个 Clover 在登录 Apple 账户前，请先使用 `Clover Configurator` 随机下 `SMBIOS/System/Serial Number`。
+另外，使用这个 Clover 在登录 Apple 账户前，请先使用 `Clover Configurator` 随机下 `SMBIOS/System/Serial Number` 和 。
 
 ## 问题
 

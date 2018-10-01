@@ -8,19 +8,6 @@
 		<true/>
 		<key>DSDT</key>
 		<dict>
-			<key>DropOEM_DSM</key>
-			<false/>
-			<key>Fixes</key>
-			<dict>
-				<key>AddDTGP</key>
-				<false/>
-				<key>AddMCHC</key>
-				<false/>
-				<key>FixADP1</key>
-				<true/>
-				<key>FixAirport</key>
-				<true/>
-			</dict>
 			<key>Patches</key>
 			<array>
 				<dict>
@@ -362,7 +349,7 @@
 			<key>Linux</key>
 			<false/>
 			<key>Tool</key>
-			<false/>
+			<true/>
 		</dict>
 		<key>Theme</key>
 		<string>SimpleThemeDark</string>
@@ -467,9 +454,7 @@
 		<key>CsrActiveConfig</key>
 		<string>0x67</string>
 		<key>ROM</key>
-		<data>
-		OodAS518
-		</data>
+		<data>OodAS518</data>
 	</dict>
 	<key>SMBIOS</key>
 	<dict>
