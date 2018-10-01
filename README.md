@@ -1,8 +1,8 @@
-## Current State
+## 配置
 
 `i5-6300HQ` `16GB` `PM961 512G` `1080p` 
 
-### Features
+### 当前运行情况
 
 - 10.14 18A391
 - Model: MacBook Pro (15-inch, 2016)

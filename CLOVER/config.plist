@@ -4,15 +4,13 @@
 <dict>
 	<key>ACPI</key>
 	<dict>
-		<key>AutoMerge</key>
-		<true/>
 		<key>DSDT</key>
 		<dict>
 			<key>Patches</key>
 			<array>
 				<dict>
 					<key>Comment</key>
-					<string>change OSID to XSID (to avoid match against _OSI XOSI patch)</string>
+					<string>Change OSID to XSID (to avoid match against _OSI XOSI patch)</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
@@ -26,7 +24,7 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change _OSI to XOSI</string>
+					<string>Change _OSI to XOSI, use with SSDT-XOSI.aml</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
@@ -40,7 +38,7 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change _DSM to XDSM</string>
+					<string>Change _DSM to XDSM (needed for _DSM injections, e.g. for HDEF, IGPU)</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
@@ -54,7 +52,21 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change HDAS to HDEF</string>
+					<string>Change ECDV to EC (so Mac OS knows about the Embedded Controller)</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					RUNEVg==
+					</data>
+					<key>Replace</key>
+					<data>
+					RUNfXw==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>Change HDAS to HDEF (needed for audio)</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
@@ -68,7 +80,7 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change HECI to IMEI</string>
+					<string>Change HECI to IMEI (so Mac OS can natively use the Management Engine)</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
@@ -82,7 +94,7 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change GFX0 to IGPU</string>
+					<string>Change GFX0 to IGPU (needed for graphics)</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
@@ -92,6 +104,168 @@
 					<key>Replace</key>
 					<data>
 					SUdQVQ==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>Rename BRT6 to BRTX, use with SSDT-BRT6.aml, SSDT-PNLF.aml, AppleBacklightInjector.kext, and VoodooPS2Controller.kext to fix brightness keys</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					FCBCUlQ2Ag==
+					</data>
+					<key>Replace</key>
+					<data>
+					FCBCUlRYAg==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change Method(_PTS,1,N) to ZPTS, pair with SSDT-PTSWAK.aml</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					X1BUUwE=
+					</data>
+					<key>Replace</key>
+					<data>
+					WlBUUwE=
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change Method(_PTS,1,S) to ZPTS, pair with SSDT-PTSWAK.aml</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					X1BUUwk=
+					</data>
+					<key>Replace</key>
+					<data>
+					WlBUUwk=
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change Method(_WAK,1,N) to ZWAK, pair with SSDT-PTSWAK.aml</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					X1dBSwE=
+					</data>
+					<key>Replace</key>
+					<data>
+					WldBSwE=
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change Method(_WAK,1,S) to ZWAK, pair with SSDT-PTSWAK.aml</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					X1dBSwk=
+					</data>
+					<key>Replace</key>
+					<data>
+					WldBSwk=
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change Method(XWAK,0,N) to ZWAK, pair with SSDT-PTSWAK.aml</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					WFdBSwA=
+					</data>
+					<key>Replace</key>
+					<data>
+					WldBSwA=
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change Method(XWAK,0,S) to ZWAK, pair with SSDT-PTSWAK.aml</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					WFdBSwg=
+					</data>
+					<key>Replace</key>
+					<data>
+					WldBSwg=
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change _STA to XSTA in Device GPI0</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					X1NUQQ==
+					</data>
+					<key>Replace</key>
+					<data>
+					WFNUQQ==
+					</data>
+					<key>TgtBridge</key>
+					<data>
+					R1BJMA==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change _CRS to XCRS in Device TPD1</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					X0NSUw==
+					</data>
+					<key>Replace</key>
+					<data>
+					WENSUw==
+					</data>
+					<key>TgtBridge</key>
+					<data>
+					VFBEMQ==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>Device AC rename to ADP1  pair with SSDT-ADP1 - credit syscl</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					QUNfXw==
+					</data>
+					<key>Replace</key>
+					<data>
+					QURQMQ==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>rename HPET to XPET,  pair with SSDT-HPET.aml</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					SFBFVA==
+					</data>
+					<key>Replace</key>
+					<data>
+					WFBFVA==
 					</data>
 				</dict>
 				<dict>
@@ -110,66 +284,16 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change _STA to XSTA in Device GPI0 (for I2C)</string>
+					<string>Rename HS12 -&gt; HS92 to avoid the patchmatic error, pair with SSDT-TB.aml</string>
 					<key>Disabled</key>
-					<false/>
+					<true/>
 					<key>Find</key>
 					<data>
-					X1NUQQ==
+					SFMxMg==
 					</data>
 					<key>Replace</key>
 					<data>
-					WFNUQQ==
-					</data>
-					<key>TgtBridge</key>
-					<data>
-					R1BJMA==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change _CRS to XCRS in Device TPD1 (for I2C)</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>
-					X0NSUw==
-					</data>
-					<key>Replace</key>
-					<data>
-					WENSUw==
-					</data>
-					<key>TgtBridge</key>
-					<data>
-					VFBEMQ==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>Rename BRT6 to BRTX, to fix brightness keys</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>
-					FCBCUlQ2Ag==
-					</data>
-					<key>Replace</key>
-					<data>
-					FCBCUlRYAg==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>rename HPET to XPET,  pair with SSDT-HPET.aml</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>
-					SFBFVA==
-					</data>
-					<key>Replace</key>
-					<data>
-					WFBFVA==
+					SFM5Mg==
 					</data>
 				</dict>
 				<dict>
@@ -200,7 +324,61 @@
 					FEAGWVBSVwI=
 					</data>
 				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>(RP15 only) Rename _RMV to XRMV and use with SSDT-TYPC.aml for USB-C hot plug support</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					X1JNVgCgFpCTVEJUUwGTU0JOUlRCVVOkVEFS
+					U6EGpEhQQ0UULUhQTUUIoCaQkpNWRElEDP//
+					//+TUE1TWAGGUFhTWAoCcAFQTVNYcAFQU1BY
+					FCpfSU5JAHBMVFIxTFRSWnBQTUwxTE1TTHBQ
+					TkwxTE5TTHBPQkYxT0JGWhQPX1BSVwCkR1BS
+					VwppCgQUFl9QUlQAoApQSUNNpEFSMTKkUFIx
+					MluCRztSUDE2
+					</data>
+					<key>Replace</key>
+					<data>
+					WFJNVgCgFpCTVEJUUwGTU0JOUlRCVVOkVEFS
+					U6EGpEhQQ0UULUhQTUUIoCaQkpNWRElEDP//
+					//+TUE1TWAGGUFhTWAoCcAFQTVNYcAFQU1BY
+					FCpfSU5JAHBMVFIxTFRSWnBQTUwxTE1TTHBQ
+					TkwxTE5TTHBPQkYxT0JGWhQPX1BSVwCkR1BS
+					VwppCgQUFl9QUlQAoApQSUNNpEFSMTKkUFIx
+					MluCRztSUDE2
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>Rename XTBT to YTBT and use with SSDT-YTBT.aml for USB-C hot plug</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					pABYVEJUVEJTRUNQR04=
+					</data>
+					<key>Replace</key>
+					<data>
+					pABZVEJUVEJTRUNQR04=
+					</data>
+				</dict>
 			</array>
+			<dict>
+					<key>Comment</key>
+					<string>Device SBTN rename to SLPB pair with SSDT-SLPB - credit syscl</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					U0JUTg==
+					</data>
+					<key>Replace</key>
+					<data>
+					U0xQQg==
+					</data>
+				</dict>
 		</dict>
 		<key>DropTables</key>
 		<array>
@@ -232,6 +410,8 @@
 				<key>PluginType</key>
 				<true/>
 			</dict>
+			<key>PluginType</key>
+			<string>1</string>
 			<key>UseSystemIO</key>
 			<true/>
 		</dict>
@@ -239,19 +419,15 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>agdpmod=vit9696 brcmfx-country=#a -lilubetaall -v darkwake=no</string>
+		<string>dart=0 darkwake=no -v brcmfx-country=#a agdpmod=vit9696 -lilubetaall</string>
 		<key>Debug</key>
 		<false/>
 		<key>DefaultVolume</key>
 		<string>LastBootedVolume</string>
 		<key>NeverHibernate</key>
 		<true/>
-		<key>NoEarlyProgress</key>
-		<false/>
 		<key>Secure</key>
 		<false/>
-		<key>SkipHibernateTimeout</key>
-		<true/>
 		<key>Timeout</key>
 		<integer>-1</integer>
 		<key>XMPDetection</key>
@@ -267,15 +443,12 @@
 	<key>CPU</key>
 	<dict>
 		<key>HWPEnable</key>
+		<true/>
+		<key>UseARTFrequency</key>
 		<false/>
 	</dict>
 	<key>Devices</key>
 	<dict>
-		<key>Audio</key>
-		<dict>
-			<key>Inject</key>
-			<string>No</string>
-		</dict>
 		<key>Properties</key>
 		<dict>
 			<key>PciRoot(0x0)/Pci(0x1f,0x3)</key>
@@ -333,7 +506,7 @@
 		<array>
 			<string>Recovery</string>
 			<string>Preboot</string>
-			<string>Windows</string>
+			<string>preboot</string>
 		</array>
 		<key>Mouse</key>
 		<dict>
@@ -347,7 +520,7 @@
 			<key>Legacy</key>
 			<false/>
 			<key>Linux</key>
-			<false/>
+			<true/>
 			<key>Tool</key>
 			<true/>
 		</dict>
@@ -372,15 +545,23 @@
 		<false/>
 		<key>AppleRTC</key>
 		<true/>
+		<key>Debug</key>
+		<false/>
 		<key>DellSMBIOSPatch</key>
 		<true/>
+		<key>KernelCpu</key>
+		<false/>
+		<key>KernelLapic</key>
+		<false/>
+		<key>KernelPm</key>
+		<true/>
+		<key>KernelXCPM</key>
+		<false/>
 		<key>KernelToPatch</key>
 		<array>
 			<dict>
 				<key>Comment</key>
 				<string>MSR 0xE2 _xcpm_idle instant reboot(c) Pike R. Alpha</string>
-				<key>Disabled</key>
-				<false/>
 				<key>Find</key>
 				<data>
 				ILniAAAADzA=
@@ -393,8 +574,6 @@
 			<dict>
 				<key>Comment</key>
 				<string>Disable panic kext logging on 10.14 release kernel (credit Vandroiy)</string>
-				<key>Disabled</key>
-				<false/>
 				<key>Find</key>
 				<data>
 				igKEwHRC
@@ -436,13 +615,29 @@
 				<data>
 				g/sPD4MDBQAA
 				</data>
-				<key>InfoPlistPatch</key>
-				<false/>
 				<key>Name</key>
 				<string>com.apple.driver.usb.AppleUSBXHCI</string>
 				<key>Replace</key>
 				<data>
 				g/sPkJCQkJCQ
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Enable BT4LE-Handoff-Hotspot</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				SIX/dEdIiwc=
+				</data>
+				<key>InfoPlistPatch</key>
+				<false/>
+				<key>Name</key>
+				<string>IOBluetoothFamily</string>
+				<key>Replace</key>
+				<data>
+				Qb4PAAAA60Q=
 				</data>
 			</dict>
 		</array>
@@ -454,7 +649,9 @@
 		<key>CsrActiveConfig</key>
 		<string>0x67</string>
 		<key>ROM</key>
-		<data>OodAS518</data>
+		<data>
+		OodAS518
+		</data>
 	</dict>
 	<key>SMBIOS</key>
 	<dict>
@@ -506,7 +703,7 @@
 		<key>CustomUUID</key>
 		<string>E70B8B42-C9DE-5BE0-A6F6-32C26A4B9D7C</string>
 		<key>InjectKexts</key>
-		<string>Yes</string>
+		<string>Detect</string>
 	</dict>
 </dict>
 </plist>
