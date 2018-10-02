@@ -8,7 +8,8 @@
 - Model: MacBook Pro (15-inch, 2016)
 - CPU 变频正常
 - HDMI 和 TypeC 热插拔外接显示器正常
-- Sleep 正常，Hiberation 禁用（可以有，但没必要）
+- Sleep/Wake 正常（插着 USB 也 OK）
+- Hiberation 禁用（可以有，但没必要）
 - 电量显示正常
 - 触摸板使用 `VoodooI2C`，当前版本是 `v2.1.4`
 - 外放和耳机正常，耳机请使用 `PostInstall/ALC298PluginFix` 
@@ -21,6 +22,18 @@
 - SD卡（没这个需求，在 BIOS 里禁用了）
 
 ## 更新记录
+
+### 10.2
+
+改用 [corenel/XPS9550-macOS](https://github.com/corenel/XPS9550-macOS) 的 SSDT/DSDT，其他基本保持不变，主要做了如下修改：
+
+- 删除 `SSDT-ALC298a` 和 `SSDT-BATC.aml`，前者现在是在 `config.plist` 中注入
+- 删除 `SSDT-pr.aml`，这个是来实现 CPU 变频的，现在使用 `CPUFriend` 实现
+- 替换 `SSDT-XOSI.aml` 以支持 `VoodooI2C`
+- 删除 `USBPort.kext` ，他应该是在 `SSDT-XHC.aml` 里实现了 USB 接口注入
+- 增加 `SSDT_IGPU_Syspref.aml` 配合 `agdpmod=vit9696` 以实现外接显示器
+
+换用这个的主要原因是 USB 接口的问题。 `USBPort.kext` 以及 `USBInjectAll.kext`似乎不太稳定，至少我遇到了 Kernel Panic、睡眠失败以及睡眠唤醒后 USB 无法工作这些问题。
 
 #### 9.30
 
@@ -43,8 +56,6 @@
 ## 说明
 
 If you encounter any problem with my clover files, please 1. create a issue and 2. use [wmchris/DellXPS15-9500-OSX](https://github.com/wmchris/DellXPS15-9550-OSX) instead, witch is more stable. 
-
-本配置文件基于 [jardenliu/XPS15-9560-Mojave](https://github.com/jardenliu/XPS15-9560-Mojave). 
 
 本 Repo 只是简单介绍一些安装情况和问题，具体教程请参考 Github 上其他 repo。
 
