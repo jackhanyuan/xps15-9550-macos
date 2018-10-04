@@ -8,8 +8,6 @@
 
 ~~使用 `SATA-100-series-unsupported.text` 替代  `SSDT-SATA.aml` 以及有关的 hot-patch。~~
 
-删除了一些没有用的文件。
-
 ### 10.3
 
 使用 [Intel FB-Patcher v1.4.5](https://www.tonymacx86.com/threads/release-intel-fb-patcher-v1-4-5.254559/) 重新生成 Framebuffer Patching 和 `USBPort.kext`。之前 Patching 的 `ig-platform-id` 是错误的，这应该是导致 4K 屏直接睡死的主要原因。之前用的 `USBPort.kext` 也是错误的。

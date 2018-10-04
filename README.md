@@ -2,7 +2,7 @@
 
 `XPS15-9550 ` `i5-6300HQ` `16GB` `PM961 512G` `4K Display` 
 
-### What's Work
+### What's Working
 
 - 10.14 18A391 ( Model: MacBook Pro (15-inch, 2016) )
 - CPU Dynamic Freq ( minimum 800 MHz )
@@ -41,7 +41,7 @@ See [Configuration/Boot](https://clover-wiki.zetam.org/Configuration/Boot)
 
 1. You should **disable Windows 10‘s Hibernation first**: Run `powercfg -h off`  in **powershell**.
 
-2. Add `UUID=xxx none ntfs rw,auto,nobrowse` to `/etc/fstabb`, **xxx** is your Windows 10 partition's UUID
+2. Add `UUID=xxx none ntfs rw,auto,nobrowse` to `/etc/fstab`, **xxx** is your Windows 10 partition's UUID
 
 ### Sleep and Disable Hibernation
 
