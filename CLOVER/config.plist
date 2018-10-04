@@ -15,59 +15,43 @@
 			<array>
 				<dict>
 					<key>Comment</key>
-					<string>change OSID to XSID (to avoid match against _OSI XOSI patch)</string>
+					<string>Change OSID to XSID (to avoid match against _OSI XOSI patch)</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
-					<data>
-					T1NJRA==
-					</data>
+					<data>T1NJRA==</data>
 					<key>Replace</key>
-					<data>
-					WFNJRA==
-					</data>
+					<data>WFNJRA==</data>
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change _OSI to XOSI, pair with SSDT-XOSI.aml</string>
+					<string>Change _OSI to XOSI, use with SSDT-XOSI.aml</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
-					<data>
-					X09TSQ==
-					</data>
+					<data>X09TSQ==</data>
 					<key>Replace</key>
-					<data>
-					WE9TSQ==
-					</data>
+					<data>WE9TSQ==</data>
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>Rename _DSM to XDSM</string>
+					<string>Change _DSM to XDSM (needed for _DSM injections, e.g. for HDEF, IGPU)</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
-					<data>
-					X0RTTQ==
-					</data>
+					<data>X0RTTQ==</data>
 					<key>Replace</key>
-					<data>
-					WERTTQ==
-					</data>
+					<data>WERTTQ==</data>
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change ECDV to EC</string>
+					<string>Change ECDV to EC (so Mac OS knows about the Embedded Controller)</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
-					<data>
-					RUNEVg==
-					</data>
+					<data>RUNEVg==</data>
 					<key>Replace</key>
-					<data>
-					RUNfXw==
-					</data>
+					<data>RUNfXw==</data>
 				</dict>
 				<dict>
 					<key>Comment</key>
@@ -85,21 +69,21 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>Device AC rename to ADP1  pair with SSDT-ADP1 - credit syscl</string>
+					<string>change SAT0 to SATA, optionally pair with SSDT-SATA.aml</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
 					<data>
-					QUNfXw==
+					U0FUMA==
 					</data>
 					<key>Replace</key>
 					<data>
-					QURQMQ==
+					U0FUQQ==
 					</data>
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change GFX0 to IGPU</string>
+					<string>Change GFX0 to IGPU (needed for graphics)</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
@@ -113,16 +97,30 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change SAT0 to SATA, optionally pair with SSDT-SATA.aml</string>
+					<string>Rename Method BRT6,2 to BRTX,2, and need add-on SSDT-BRT6.aml</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
 					<data>
-					U0FUMA==
+					FCBCUlQ2Ag==
 					</data>
 					<key>Replace</key>
 					<data>
-					U0FUQQ==
+					FCBCUlRYAg==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change Method(GPRW,2,N) to XPRW, pair with SSDT-GPRW.aml</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					R1BSVwI=
+					</data>
+					<key>Replace</key>
+					<data>
+					WFBSVwI=
 					</data>
 				</dict>
 				<dict>
@@ -155,35 +153,7 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change Method(GPRW,2,N) to XPRW, pair with SSDT-GPRW.aml</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>
-					R1BSVwI=
-					</data>
-					<key>Replace</key>
-					<data>
-					WFBSVwI=
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>Rename Method BRT6,2 to BRTX,2, and need add-on SSDT-BRT6.aml</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>
-					FCBCUlQ2Ag==
-					</data>
-					<key>Replace</key>
-					<data>
-					FCBCUlRYAg==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change _STA to XSTA in Device GPI0</string>
+					<string>change _STA to XSTA in Device GPI0 for I2C</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
@@ -201,7 +171,7 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change _CRS to XCRS in Device TPD1</string>
+					<string>change _CRS to XCRS in Device TPD1 for I2C</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
@@ -215,6 +185,44 @@
 					<key>TgtBridge</key>
 					<data>
 					VFBEMQ==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>rename _RMV to XRMV, pair with SSDT-TYPC.aml</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					X1JNVg==
+					</data>
+					<key>Replace</key>
+					<data>
+					WFJNVg==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>Rename XTBT to YTBT and use with SSDT-YTBT.aml for USB-C hot plug</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>pABYVEJUVEJTRUNQR04=</data>
+					<key>Replace</key>
+					<data>pABZVEJUVEJTRUNQR04=</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>Device AC rename to ADP1  pair with SSDT-ADP1 - credit syscl</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					QUNfXw==
+					</data>
+					<key>Replace</key>
+					<data>
+					QURQMQ==
 					</data>
 				</dict>
 			</array>
@@ -243,14 +251,12 @@
 				<key>PluginType</key>
 				<true/>
 			</dict>
-			<key>PluginType</key>
-			<string>1</string>
 		</dict>
 	</dict>
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>agdpmod=vit9696 brcmfx-country=#a -lilubetaall -v darkwake=no</string>
+		<string>agdpmod=vit9696 brcmfx-country=CN -lilubetaall -v darkwake=no</string>
 		<key>Debug</key>
 		<false/>
 		<key>DefaultVolume</key>
@@ -294,6 +300,10 @@
 				<key>AAPL,ig-platform-id</key>
 				<data>
 				AAAWGQ==
+				</data>
+				<key>device-id</key>
+				<data>
+				GxkAAA==
 				</data>
 				<key>disable-external-gpu</key>
 				<data>
@@ -395,10 +405,6 @@
 		</dict>
 		<key>USB</key>
 		<dict>
-			<key>AddClockID</key>
-			<true/>
-			<key>FixOwnership</key>
-			<true/>
 			<key>Inject</key>
 			<false/>
 		</dict>
@@ -439,6 +445,8 @@
 			<key>Nvidia</key>
 			<false/>
 		</dict>
+		<key>NvidiaNoEFI</key>
+		<true/>
 	</dict>
 	<key>KernelAndKextPatches</key>
 	<dict>

@@ -9,9 +9,21 @@
 | [CPUFriend+CPUFriendDataProvider](https://github.com/acidanthera/CPUFriend) | 1.1.5   |
 |         [Lilu](https://github.com/acidanthera/Lilu)          | 1.2.7   |
 |     [NoTouchID](https://github.com/al3xtjames/NoTouchID)     | 1.0.1   |
+|             [SATA-100-series-unsupported.kext]()             | 0.5.1   |
 | [VirtualSMC+SMCBatteryManager+SMCProcessor](https://github.com/acidanthera/VirtualSMC) | 1.0.0   |
 | [USBPorts](https://www.tonymacx86.com/threads/release-intel-fb-patcher-v1-4-5.254559/) | 1.4.5   |
 | [VoodooI2C+VoodooI2CHID](https://github.com/alexandred/VoodooI2C) | 2.1.4   |
 | [VoodooPS2Controller](https://bitbucket.org/RehabMan/os-x-voodoo-ps2-controller/downloads/) | 0928    |
 | [WhateverGreen](https://github.com/acidanthera/WhateverGreen) | 1.2.3   |
 
+### About USBPorts.kext
+
+This kext is generated using [Intel FB-Patcher v1.4.5](https://www.tonymacx86.com/threads/release-intel-fb-patcher-v1-4-5.254559/) to replace ` USBInjectAll with SSDT-UIAC.aml`
+
+| Port      | Device                |
+| --------- | --------------------- |
+| HS01/SS01 | Right-side USB2.0/3.0 |
+| HS02/SS02 | Left-side USB2.0/3.0  |
+| HS04      | Bluetooth             |
+| HS09      | Touchscreen           |
+| HS12      | Camera                |
