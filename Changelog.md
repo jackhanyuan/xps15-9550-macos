@@ -2,26 +2,24 @@
 
 ### 10.10
 
+将 Clover 更新到 Rehabman 版本的 R4697。
+
 尝试修复唤醒无声的问题，还需要多测试。
 
 将主题换成了 Nightwish(256)，默认使用 Nightwish256。
 
 更新了一些 SSDT 和 kexts。
 
-- 将 SSDT-Config 更新为 SSDT-RMCF （from [RehabMan/OS-X-Clover-Laptop-Config](https://github.com/RehabMan/OS-X-Clover-Laptop-Config)），并更新一些相关的 SSDT
-- 更新 
+- 将 SSDT-Config 更新为 SSDT-RMCF （from [RehabMan/OS-X-Clover-Laptop-Config](https://github.com/RehabMan/OS-X-Clover-Laptop-Config)），并更新一些相关的 SSDT。主要是删除了所有 IGPU 和 Audio 的 Injection。
+- 更新 `AirportBrcmFixup` ， `CodecCommander`，  `VoodooPS2Controller` 以及 `BT4LEContiunityFixup`
 
-### 10.5
+删除提高 VRAM 的 patching。
 
-修复 framebuffer patching 将 i5 的 VRAM 提到 2048MB
+另外发现将 `brcmfx-country` 设置成 `CN` 会导致一些 WiFi 连不上。
 
 ### 10.4
 
-这应该是最近最后一次改动了。
-
 将 `SSDT-TB.aml` 换为 `SSDT-TYPC.aml+SSDT-YTBT.aml` 以解决 type-c 的连接问题 。
-
-~~使用 `SATA-100-series-unsupported.text` 替代  `SSDT-SATA.aml` 以及有关的 hot-patch。~~
 
 ### 10.3
 
