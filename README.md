@@ -4,14 +4,14 @@
 
 ### What's Working
 
-- 10.14 18A391 ( Model: MacBook Pro (15-inch, 2016) )
+- 10.14 18A391 MacbookPro13,3
 - CPU Dynamic Freq ( minimum 800 MHz )
 - HDMI and USBC (to DP) hot plug
 - Sleep/Wake ( Hibernation disabled )
 - Correct battery status
 - Correct brightness control
 - Touchpad with `VoodooI2C` 
-- Speaker and Headphone ( may need `PostInstall/ALC298PluginFix`)
+- Speaker and Headphone
 - ...
 
 **Almost everything works fine**
@@ -25,9 +25,13 @@
 
 ## Note
 
-Please don't forget to generate a new `SMBIOS-System-Serial Number` using `Clover Configurator` before you login in to an Apple account.
+You may refer to [wmchris's tutorial](https://github.com/wmchris/DellXPS15-9550-OSX) for the installation guide and the solutions of some issues. 
 
-Create an issue with your hardware description( CPU, SSD, Display ... ) if you encounter any problem ( My writing in English is poooooor, but I can read ).
+But note that please create an issue **in my repository**  if you encounter any problem when **using my files or folloing my tutorial** ( Please don't disturb others ).
+
+My writing in English is poooooor:(, but I can read :).
+
+Please don't forget to **generate a new `Serial Number`** in SMBIOS section using `Clover Configurator` before you login in to an Apple account.
 
 ## Issues
 
@@ -39,32 +43,41 @@ See [Configuration/Boot](https://clover-wiki.zetam.org/Configuration/Boot)
 
 ### Native NTFS Read/Write
 
-1. You should **disable Windows 10‘s Hibernation first**: Run `powercfg -h off`  in **powershell**.
+1. You should **disable Windows 10‘s hibernation first**: run `powercfg -h off`  in **powershell**.
 
-2. Add `UUID=xxx none ntfs rw,auto,nobrowse` to `/etc/fstab`, **xxx** is your Windows 10 partition's UUID
+2. Add `UUID=xxx none ntfs rw,auto,nobrowse` to `/etc/fstab`, **xxx** is the UUID of your Windows 10 partition
 
 ### Sleep and Disable Hibernation
 
 ```shell
 sudo pmset -a hibernatemode 0
+sudo pmset -a autopoweroff 0
 sudo pmset -a disksleep 0
 sudo pmset -a standby 0
 sudo pmset -b tcpkeepalive 0 (optional)
 ```
 
-`-b` is for battery, `-c` is for AC Power, and `-a` means both.
+`-b` - battery, `-c` - AC Power, and `-a` means both.
 
 ### CPU Frequency
 
-the `CPUFriendDataProvider.kext` ([CPUFriend/Instructions](https://github.com/acidanthera/CPUFriend/blob/master/Instructions.md)) in this repo is for `i5-6300HQ`.
+the `CPUFriendDataProvider.kext` ([CPUFriend/Instructions](https://github.com/acidanthera/CPUFriend/blob/master/Instructions.md)) in this repo is for `i5-6300HQ` ( Credit @corenel for [the modified plist file](https://github.com/corenel/XPS9550-macOS/commit/7089feb37fbcf841c4cf7196153a2270185bc29c#diff-d9bb32289e5df55b61274ddb859aaff2)  ).
 
 Note that the plist file metioned in the above instructions should already be **modified** for your specific CPU.
 
-修改教程可以参考 [开启完整HWP(SpeedShift)电源管理特性](http://bbs.pcbeta.com/viewthread-1737021-1-1.html) 。
+You may refer to  [HWP(Intel Speed Shift) enable](https://www.insanelymac.com/forum/topic/321021-guide-hwpintel-speed-shift-enable-with-full-power-management/) this guide.
 
-### Framebuffer, USB and Audio
+### Headphone
 
-[Intel FB-Patcher v1.4.3](https://www.tonymacx86.com/threads/release-intel-fb-patcher-v1-4-3.254559/)
+You may need `PostInstall/ALC298PluginFix` to make headphone works properly.
+
+Credit @gooodwin for this plugin and @daliansky for the install-command
+
+### Font Rendering
+
+```shell
+defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
+```
 
 ### Single/Double Click Delay
 
@@ -73,7 +86,7 @@ See [is-it-possible-to-get-rid-of-the-delay-between-right-clicking-and-seeing-th
 > Tapping with the trackpad has a delay while the trackpad decides which gesture you are performing. Disabling some gestures will remove this delay in certain cases:
 >
 > - If “Smart zoom” is turned on, then a two-finger tap needs to wait to see if you are performing a two-finger double tap.
-> - If dragging is enabled (“with drag lock” or “without drag lock”), then a one-finger tap needs to wait to see if you are performing a double tap. (This setting hides in the Accessibility preference pane.)
+> - If dragging is enabled (“with drag lock” or “without drag lock”), then a one-finger tap needs to 
 
 ## Credits
 

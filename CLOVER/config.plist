@@ -4,10 +4,16 @@
 <dict>
 	<key>ACPI</key>
 	<dict>
+		<key>AutoMerge</key>
+		<true/>
 		<key>DSDT</key>
 		<dict>
+			<key>DropOEM_DSM</key>
+			<false/>
 			<key>Fixes</key>
 			<dict>
+				<key>FixADP1</key>
+				<true/>
 				<key>FixAirport</key>
 				<true/>
 			</dict>
@@ -19,9 +25,13 @@
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
-					<data>T1NJRA==</data>
+					<data>
+					T1NJRA==
+					</data>
 					<key>Replace</key>
-					<data>WFNJRA==</data>
+					<data>
+					WFNJRA==
+					</data>
 				</dict>
 				<dict>
 					<key>Comment</key>
@@ -29,9 +39,13 @@
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
-					<data>X09TSQ==</data>
+					<data>
+					X09TSQ==
+					</data>
 					<key>Replace</key>
-					<data>WE9TSQ==</data>
+					<data>
+					WE9TSQ==
+					</data>
 				</dict>
 				<dict>
 					<key>Comment</key>
@@ -39,9 +53,13 @@
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
-					<data>X0RTTQ==</data>
+					<data>
+					X0RTTQ==
+					</data>
 					<key>Replace</key>
-					<data>WERTTQ==</data>
+					<data>
+					WERTTQ==
+					</data>
 				</dict>
 				<dict>
 					<key>Comment</key>
@@ -49,9 +67,27 @@
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
-					<data>RUNEVg==</data>
+					<data>
+					RUNEVg==
+					</data>
 					<key>Replace</key>
-					<data>RUNfXw==</data>
+					<data>
+					RUNfXw==
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>change HDAS to HDEF</string>
+					<key>Disabled</key>
+					<true/>
+					<key>Find</key>
+					<data>
+					SERBUw==
+					</data>
+					<key>Replace</key>
+					<data>
+					SERFRg==
+					</data>
 				</dict>
 				<dict>
 					<key>Comment</key>
@@ -205,24 +241,14 @@
 					<key>Comment</key>
 					<string>Rename XTBT to YTBT and use with SSDT-YTBT.aml for USB-C hot plug</string>
 					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>pABYVEJUVEJTRUNQR04=</data>
-					<key>Replace</key>
-					<data>pABZVEJUVEJTRUNQR04=</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>Device AC rename to ADP1  pair with SSDT-ADP1 - credit syscl</string>
-					<key>Disabled</key>
-					<false/>
+					<true/>
 					<key>Find</key>
 					<data>
-					QUNfXw==
+					pABYVEJUVEJTRUNQR04=
 					</data>
 					<key>Replace</key>
 					<data>
-					QURQMQ==
+					pABZVEJUVEJTRUNQR04=
 					</data>
 				</dict>
 			</array>
@@ -256,13 +282,11 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>agdpmod=vit9696 brcmfx-country=CN -lilubetaall -v darkwake=no</string>
+		<string>agdpmod=vit9696 brcmfx-country=#a -lilubetaall</string>
 		<key>Debug</key>
 		<false/>
 		<key>DefaultVolume</key>
 		<string>LastBootedVolume</string>
-		<key>NeverHibernate</key>
-		<true/>
 		<key>Secure</key>
 		<false/>
 		<key>Timeout</key>
@@ -280,9 +304,7 @@
 	<key>CPU</key>
 	<dict>
 		<key>HWPEnable</key>
-		<false/>
-		<key>UseARTFrequency</key>
-		<false/>
+		<true/>
 	</dict>
 	<key>Devices</key>
 	<dict>
@@ -290,6 +312,10 @@
 		<dict>
 			<key>PciRoot(0x0)/Pci(0x1f,0x3)</key>
 			<dict>
+				<key>device-id</key>
+				<data>
+				cKEAAA==
+				</data>
 				<key>layout-id</key>
 				<data>
 				SAAAAA==
@@ -385,26 +411,18 @@
 				<data>
 				AAQAAA==
 				</data>
-				<key>framebuffer-fbmem</key>
-				<data>
-				AABQAQ==
-				</data>
 				<key>framebuffer-patch-enable</key>
 				<data>
 				AQAAAA==
-				</data>
-				<key>framebuffer-stolenmem</key>
-				<data>
-				AAAgAg==
-				</data>
-				<key>framebuffer-unifiedmem</key>
-				<data>
-				AAAAYA==
 				</data>
 			</dict>
 		</dict>
 		<key>USB</key>
 		<dict>
+			<key>AddClockID</key>
+			<true/>
+			<key>FixOwnership</key>
+			<true/>
 			<key>Inject</key>
 			<false/>
 		</dict>
@@ -432,7 +450,7 @@
 			<true/>
 		</dict>
 		<key>Theme</key>
-		<string>SimpleThemeDark</string>
+		<string>Nightwish256</string>
 	</dict>
 	<key>Graphics</key>
 	<dict>
@@ -445,8 +463,6 @@
 			<key>Nvidia</key>
 			<false/>
 		</dict>
-		<key>NvidiaNoEFI</key>
-		<true/>
 	</dict>
 	<key>KernelAndKextPatches</key>
 	<dict>
@@ -455,8 +471,6 @@
 		<key>Debug</key>
 		<false/>
 		<key>DellSMBIOSPatch</key>
-		<true/>
-		<key>KernelLapic</key>
 		<true/>
 		<key>KernelPm</key>
 		<true/>
@@ -493,8 +507,6 @@
 				</data>
 			</dict>
 		</array>
-		<key>KernelXCPM</key>
-		<false/>
 		<key>KextsToPatch</key>
 		<array>
 			<dict>
@@ -593,10 +605,10 @@
 	</dict>
 	<key>SystemParameters</key>
 	<dict>
-		<key>CustomUUID</key>
-		<string>E70B8B42-C9DE-5BE0-A6F6-32C26A4B9D7C</string>
 		<key>InjectKexts</key>
 		<string>Detect</string>
+		<key>InjectSystemID</key>
+		<true/>
 	</dict>
 </dict>
 </plist>

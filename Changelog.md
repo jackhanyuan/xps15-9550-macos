@@ -1,5 +1,20 @@
 ## 更新记录
 
+### 10.10
+
+尝试修复唤醒无声的问题，还需要多测试。
+
+将主题换成了 Nightwish(256)，默认使用 Nightwish256。
+
+更新了一些 SSDT 和 kexts。
+
+- 将 SSDT-Config 更新为 SSDT-RMCF （from [RehabMan/OS-X-Clover-Laptop-Config](https://github.com/RehabMan/OS-X-Clover-Laptop-Config)），并更新一些相关的 SSDT
+- 更新 
+
+### 10.5
+
+修复 framebuffer patching 将 i5 的 VRAM 提到 2048MB
+
 ### 10.4
 
 这应该是最近最后一次改动了。
