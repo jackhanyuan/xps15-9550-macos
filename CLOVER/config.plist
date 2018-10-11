@@ -77,20 +77,6 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change HDAS to HDEF</string>
-					<key>Disabled</key>
-					<true/>
-					<key>Find</key>
-					<data>
-					SERBUw==
-					</data>
-					<key>Replace</key>
-					<data>
-					SERFRg==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
 					<string>Change HECI to IMEI (so Mac OS can natively use the Management Engine)</string>
 					<key>Disabled</key>
 					<false/>
@@ -325,7 +311,7 @@
 			<dict>
 				<key>AAPL,ig-platform-id</key>
 				<data>
-				AAAWGQ==
+				AAAbGQ==
 				</data>
 				<key>device-id</key>
 				<data>
