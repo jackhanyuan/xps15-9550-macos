@@ -47,7 +47,7 @@ See [Configuration/Boot](https://clover-wiki.zetam.org/Configuration/Boot)
 
 2. Add `UUID=xxx none ntfs rw,auto,nobrowse` to `/etc/fstab`, **xxx** is the UUID of your Windows 10 partition
 
-### Sleep and Disable Hibernation
+### Disable Hibernation and Sleep
 
 ```shell
 sudo pmset -a hibernatemode 0
@@ -65,7 +65,7 @@ the `CPUFriendDataProvider.kext` ([CPUFriend/Instructions](https://github.com/ac
 
 Note that the plist file metioned in the above instructions should already be **modified** for your specific CPU.
 
-You may refer to  [HWP(Intel Speed Shift) enable](https://www.insanelymac.com/forum/topic/321021-guide-hwpintel-speed-shift-enable-with-full-power-management/) this guide.
+You may refer to this guide  [HWP(Intel Speed Shift) enable](https://www.insanelymac.com/forum/topic/321021-guide-hwpintel-speed-shift-enable-with-full-power-management/).
 
 ### Headphone
 
@@ -74,6 +74,8 @@ You may need `PostInstall/ALC298PluginFix` to make headphone works properly.
 Credit @gooodwin for this plugin and @daliansky for the install-command
 
 ### Font Rendering
+
+(for non-retina display)
 
 ```shell
 defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO

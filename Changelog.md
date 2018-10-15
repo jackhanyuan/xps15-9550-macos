@@ -1,5 +1,9 @@
 ## 更新记录
 
+### 10.15
+
+使用 [Rehabman/AppleBacklightFixup](https://github.com/RehabMan/AppleBacklightFixup) 代替 `AppleBacklightInjector` 
+
 ### 10.10
 
 将 Clover 更新到 Rehabman 版本的 R4697。
