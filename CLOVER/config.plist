@@ -270,7 +270,7 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>agdpmod=vit9696 brcmfx-country=#a -lilubetaall</string>
+		<string>agdpmod=vit9696 brcmfx-country=#a -lilubetaall -v</string>
 		<key>Debug</key>
 		<false/>
 		<key>DefaultVolume</key>
@@ -300,10 +300,6 @@
 		<dict>
 			<key>PciRoot(0x0)/Pci(0x1f,0x3)</key>
 			<dict>
-				<key>device-id</key>
-				<data>
-				cKEAAA==
-				</data>
 				<key>layout-id</key>
 				<data>
 				SAAAAA==
@@ -311,6 +307,10 @@
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
 			<dict>
+				<key>AAPL,GfxYTile</key>
+				<data>
+				AQAAAA==
+				</data>
 				<key>AAPL,ig-platform-id</key>
 				<data>
 				AAAbGQ==
@@ -318,10 +318,6 @@
 				<key>device-id</key>
 				<data>
 				GxkAAA==
-				</data>
-				<key>disable-external-gpu</key>
-				<data>
-				AQAAAA==
 				</data>
 				<key>enable-hdmi20</key>
 				<data>
@@ -345,7 +341,7 @@
 				</data>
 				<key>framebuffer-con0-pipe</key>
 				<data>
-				CAAAAA==
+				EgAAAA==
 				</data>
 				<key>framebuffer-con0-type</key>
 				<data>
@@ -369,7 +365,7 @@
 				</data>
 				<key>framebuffer-con1-pipe</key>
 				<data>
-				CQAAAA==
+				EgAAAA==
 				</data>
 				<key>framebuffer-con1-type</key>
 				<data>
@@ -393,7 +389,7 @@
 				</data>
 				<key>framebuffer-con2-pipe</key>
 				<data>
-				CgAAAA==
+				EgAAAA==
 				</data>
 				<key>framebuffer-con2-type</key>
 				<data>
@@ -405,24 +401,19 @@
 				</data>
 			</dict>
 		</dict>
-		<key>USB</key>
-		<dict>
-			<key>AddClockID</key>
-			<true/>
-			<key>FixOwnership</key>
-			<true/>
-			<key>Inject</key>
-			<false/>
-		</dict>
 	</dict>
 	<key>GUI</key>
 	<dict>
+		<key>#ScreenResolution</key>
+		<string>1920x1080</string>
 		<key>Hide</key>
 		<array>
 			<string>Recovery</string>
 			<string>Preboot</string>
 			<string>preboot</string>
 		</array>
+		<key>Language</key>
+		<string>en:0</string>
 		<key>Mouse</key>
 		<dict>
 			<key>Enabled</key>
@@ -499,42 +490,6 @@
 		<array>
 			<dict>
 				<key>Comment</key>
-				<string>Prevent Apple I2C kexts from attaching to I2C controllers, credit CoolStar</string>
-				<key>Disabled</key>
-				<false/>
-				<key>Find</key>
-				<data>
-				SU9LaXQ=
-				</data>
-				<key>InfoPlistPatch</key>
-				<true/>
-				<key>Name</key>
-				<string>com.apple.driver.AppleIntelLpssI2C</string>
-				<key>Replace</key>
-				<data>
-				SU9LaXM=
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Prevent Apple I2C kexts from attaching to I2C controllers, credit CoolStar</string>
-				<key>Disabled</key>
-				<false/>
-				<key>Find</key>
-				<data>
-				SU9LaXQ=
-				</data>
-				<key>InfoPlistPatch</key>
-				<true/>
-				<key>Name</key>
-				<string>com.apple.driver.AppleIntelLpssI2CController</string>
-				<key>Replace</key>
-				<data>
-				SU9LaXM=
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
 				<string>Enable BT4LE-Handoff-Hotspot</string>
 				<key>Disabled</key>
 				<false/>
@@ -566,48 +521,10 @@
 	</dict>
 	<key>SMBIOS</key>
 	<dict>
-		<key>BiosReleaseDate</key>
-		<string>04/09/2018</string>
-		<key>BiosVendor</key>
-		<string>Apple Inc.</string>
-		<key>BiosVersion</key>
-		<string>MBP133.88Z.0244.B00.1804091703</string>
-		<key>Board-ID</key>
-		<string>Mac-A5C67F76ED83108C</string>
-		<key>BoardManufacturer</key>
-		<string>Apple Inc.</string>
-		<key>BoardSerialNumber</key>
-		<string>C02653501OPDKG1JC</string>
-		<key>BoardType</key>
-		<integer>10</integer>
-		<key>BoardVersion</key>
-		<string>1.0</string>
-		<key>ChassisAssetTag</key>
-		<string>MacBook-Aluminum</string>
-		<key>ChassisManufacturer</key>
-		<string>Apple Inc.</string>
-		<key>ChassisType</key>
-		<string>0x09</string>
-		<key>Family</key>
-		<string>MacBook Pro</string>
-		<key>FirmwareFeatures</key>
-		<string>0xFC0FE13F</string>
-		<key>FirmwareFeaturesMask</key>
-		<string>0xFF1FFF3F</string>
-		<key>LocationInChassis</key>
-		<string>Part Component</string>
-		<key>Manufacturer</key>
-		<string>Apple Inc.</string>
-		<key>Mobile</key>
-		<true/>
-		<key>PlatformFeature</key>
-		<string>0x1A</string>
 		<key>ProductName</key>
 		<string>MacBookPro13,3</string>
-		<key>SerialNumber</key>
-		<string>C02SX31GGTFN</string>
-		<key>Version</key>
-		<string>1.0</string>
+		<key>Trust</key>
+		<true/>
 	</dict>
 	<key>SystemParameters</key>
 	<dict>
