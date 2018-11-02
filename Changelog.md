@@ -1,5 +1,19 @@
 ## 更新记录
 
+### 11.2
+
+更新 Lilu、AppleALC、VirtualSMC、WhateverGreen
+
+修正 USBPorts.kext 里两个 USB2.0 的值为 3，根据如下：
+
+```
+HSxx ports connected to USB3 ports should be set to USB3
+```
+
+（希望我没有会错意= =）
+
+删除 SSDT-ALS0.aml
+
 ### 10.15
 
 使用 [Rehabman/AppleBacklightFixup](https://github.com/RehabMan/AppleBacklightFixup) 代替 `AppleBacklightInjector` 
