@@ -1,8 +1,8 @@
 ### Laptop Specs
 
-`XPS15-9550 ` `i5-6300HQ` `16GB` `PM961 512G` `4K Display` `1080P Monitor`
+`XPS15-9550 `  `i5-6300HQ`  `16GB`  `PM961 512G`  `4K Display`  `1080P Monitor`
 
-`10.14.1 18B75` `MacBookPro13,3 `
+`10.14.2 18C54`  `MacBookPro13,3 `
 
 ### Untested 
 
@@ -17,7 +17,7 @@ You may refer to [wmchris's tutorial](https://github.com/wmchris/DellXPS15-9550-
 
 But note that please create an issue **in my repository**  if you encounter any problem when **using my files or folloing my tutorial** ( Please don't disturb others ). My writing in English is poooooor:(, but I can read :).
 
-You may need to **generate a new `Serial Number`** in SMBIOS section before you login in to an Apple account.
+You should **generate a new `Serial Number`** in SMBIOS section before you login in to an Apple account.
 
 ## Issues
 
@@ -29,9 +29,9 @@ See [Configuration/Boot](https://clover-wiki.zetam.org/Configuration/Boot)
 
 ### Native NTFS Read/Write
 
-1. You should **disable Windows 10's hibernation first**: run `powercfg -h off`  in **powershell**.
+1. You should **disable Windows 10's hibernation first**： run `powercfg -h off`  in **powershell**.
 
-2. Add `UUID=xxx none ntfs rw,auto,nobrowse` to `/etc/fstab`, **xxx** is the UUID of your Windows 10 partition
+2. Add `UUID=xxx none ntfs rw,auto,nobrowse` to `/etc/fstab`, **xxx** is the UUID of your Windows 10（NTFS） partition
 
 ### Disable Hibernation
 
@@ -45,7 +45,7 @@ sudo pmset -b tcpkeepalive 0 (optional)
 
 `-b` - battery, `-c` - AC Power, and `-a` means both.
 
-(You may need to uncheck any option shown on the `Energy Saver` panel.)
+(Please uncheck any option in the `Energy Saver` panel except `Prevent computer from sleeping...`)
 
 ### Headphone
 
@@ -53,9 +53,7 @@ You may need `PostInstall/ALC298PluginFix` to make headphone works properly.
 
 Credit @gooodwin for this plugin and @daliansky for the `install/uninstall.command`
 
-### Font Rendering
-
-(for non-retina display)
+### Font Rendering for Non-Retina Display
 
 ```shell
 defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
@@ -69,11 +67,17 @@ Rebuild kextcache.
 sudo kextcache -i /
 ```
 
+### Connect External Monitor via USB-C Port
+
+If you are connecting an external monitor via USB-C port, you may need to close the express-card shown on the menubar manually to prevent sleep-wake-failure.
+
 ### CPU Frequency
 
-the `CPUFriendDataProvider.kext` ([CPUFriend/Instructions](https://github.com/acidanthera/CPUFriend/blob/master/Instructions.md)) in this repo is for `i5-6300HQ` ( Credit @corenel for [the modified plist file](https://github.com/corenel/XPS9550-macOS/commit/7089feb37fbcf841c4cf7196153a2270185bc29c#diff-d9bb32289e5df55b61274ddb859aaff2) ).
+the `CPUFriendDataProvider.kext` ([CPUFriend/Instructions](https://github.com/acidanthera/CPUFriend/blob/master/Instructions.md)) in this repo was generated for `i5-6300HQ` ( Credit @corenel for [the modified plist file](https://github.com/corenel/XPS9550-macOS/commit/7089feb37fbcf841c4cf7196153a2270185bc29c#diff-d9bb32289e5df55b61274ddb859aaff2) ).
 
 Note that the plist file metioned in the CPUFriend/Instructions should already be **modified** for your specific CPU. You may refer to this guide  [HWP(Intel Speed Shift) enable](https://www.insanelymac.com/forum/topic/321021-guide-hwpintel-speed-shift-enable-with-full-power-management/).
+
+You can use `intel(R) Power Gadget.app` to check your CPU frequency.
 
 ### Single/Double Click Delay
 

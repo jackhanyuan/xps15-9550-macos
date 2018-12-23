@@ -1,4 +1,17 @@
-## 更新记录
+##  A更新记录
+
+### 12.23
+
+更新 Lilu、AppleALC、VirtualSMC、WhateverGreen、AirportBrcmFixup
+
+删除 AppleBacklightFixup，因为似乎已经集成到了 WhateverGreen 里了
+
+更新 Clover 到 4813，但是 Clover Configurator 里还是显示 4603
+
+修改了一点 `config.plist` 配置
+
+- 删除 Framebuffer Connectors，之前没有这些连不了外接显示器，现在不知道为什么删了还可以，所以删了
+- 去掉了 AppleRTC 和 KernelPM，似乎没啥用
 
 ### 11.2
 

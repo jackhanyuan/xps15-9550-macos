@@ -270,11 +270,13 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>agdpmod=vit9696 brcmfx-country=#a -lilubetaall -v</string>
+		<string>agdpmod=vit9696 -lilubetaall darkwake=no -v</string>
 		<key>Debug</key>
 		<false/>
 		<key>DefaultVolume</key>
 		<string>LastBootedVolume</string>
+		<key>NeverHibernate</key>
+		<true/>
 		<key>Secure</key>
 		<false/>
 		<key>Timeout</key>
@@ -315,85 +317,9 @@
 				<data>
 				AAAbGQ==
 				</data>
-				<key>device-id</key>
-				<data>
-				GxkAAA==
-				</data>
 				<key>enable-hdmi20</key>
 				<data>
 				AQAAAA==
-				</data>
-				<key>framebuffer-con0-busid</key>
-				<data>
-				AAAAAA==
-				</data>
-				<key>framebuffer-con0-enable</key>
-				<data>
-				AQAAAA==
-				</data>
-				<key>framebuffer-con0-flags</key>
-				<data>
-				mAAAAA==
-				</data>
-				<key>framebuffer-con0-index</key>
-				<data>
-				AAAAAA==
-				</data>
-				<key>framebuffer-con0-pipe</key>
-				<data>
-				EgAAAA==
-				</data>
-				<key>framebuffer-con0-type</key>
-				<data>
-				AgAAAA==
-				</data>
-				<key>framebuffer-con1-busid</key>
-				<data>
-				BQAAAA==
-				</data>
-				<key>framebuffer-con1-enable</key>
-				<data>
-				AQAAAA==
-				</data>
-				<key>framebuffer-con1-flags</key>
-				<data>
-				hwEAAA==
-				</data>
-				<key>framebuffer-con1-index</key>
-				<data>
-				AQAAAA==
-				</data>
-				<key>framebuffer-con1-pipe</key>
-				<data>
-				EgAAAA==
-				</data>
-				<key>framebuffer-con1-type</key>
-				<data>
-				AAQAAA==
-				</data>
-				<key>framebuffer-con2-busid</key>
-				<data>
-				BAAAAA==
-				</data>
-				<key>framebuffer-con2-enable</key>
-				<data>
-				AQAAAA==
-				</data>
-				<key>framebuffer-con2-flags</key>
-				<data>
-				hwEAAA==
-				</data>
-				<key>framebuffer-con2-index</key>
-				<data>
-				AgAAAA==
-				</data>
-				<key>framebuffer-con2-pipe</key>
-				<data>
-				EgAAAA==
-				</data>
-				<key>framebuffer-con2-type</key>
-				<data>
-				AAQAAA==
 				</data>
 				<key>framebuffer-patch-enable</key>
 				<data>
@@ -429,7 +355,7 @@
 			<true/>
 		</dict>
 		<key>Theme</key>
-		<string>Nightwish256</string>
+		<string>Nightwish</string>
 	</dict>
 	<key>Graphics</key>
 	<dict>
@@ -445,13 +371,9 @@
 	</dict>
 	<key>KernelAndKextPatches</key>
 	<dict>
-		<key>AppleRTC</key>
-		<true/>
 		<key>Debug</key>
 		<false/>
 		<key>DellSMBIOSPatch</key>
-		<true/>
-		<key>KernelPm</key>
 		<true/>
 		<key>KernelToPatch</key>
 		<array>
@@ -506,6 +428,42 @@
 				Qb4PAAAA60Q=
 				</data>
 			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Prevent Apple I2C kexts from attaching to I2C controllers, credit CoolStar</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				SU9LaXQ=
+				</data>
+				<key>InfoPlistPatch</key>
+				<true/>
+				<key>Name</key>
+				<string>com.apple.driver.AppleIntelLpssI2C</string>
+				<key>Replace</key>
+				<data>
+				SU9LaXM=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Prevent Apple I2C kexts from attaching to I2C controllers, credit CoolStar</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				SU9LaXQ=
+				</data>
+				<key>InfoPlistPatch</key>
+				<true/>
+				<key>Name</key>
+				<string>com.apple.driver.AppleIntelLpssI2CController</string>
+				<key>Replace</key>
+				<data>
+				SU9LaXM=
+				</data>
+			</dict>
 		</array>
 	</dict>
 	<key>RtVariables</key>
@@ -515,9 +473,7 @@
 		<key>CsrActiveConfig</key>
 		<string>0x67</string>
 		<key>ROM</key>
-		<data>
-		OodAS518
-		</data>
+		<string>UseMacAddr0</string>
 	</dict>
 	<key>SMBIOS</key>
 	<dict>
