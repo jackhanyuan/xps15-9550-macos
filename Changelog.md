@@ -1,10 +1,28 @@
-##  A更新记录
+##  更新记录
+
+### 1.4
+
+#### Kext
+
+更新 `Lilu`、`WhateverGreen`、`AirportBrcmFixup`
+
+更新 `CPUFriend` 和 `CPUFriendDataProvider`。我才发现之前用的 CPUFriend 居然是 `1.1.3`。。难怪需要启动参数才能 enable。现在这些 kext 都默认支持 10.14，不需要 `-lilubetaall` 了。 
+
+删除 `NoTouchID`，因为 MacBookPro 13,3 模型没有 Touch ID，不需要这个 kext。
+
+#### SSDT
+
+更新 `SSDT-RMCF.aml` 和 `SSDT-PNLF.aml` （from [RehabMan/OS-X-Clover-Laptop-Config](https://github.com/RehabMan/OS-X-Clover-Laptop-Config)）
+
+#### Theme
+
+更新 Nightwish(256)（from `CloverThemeManager`）
 
 ### 12.23
 
-更新 Lilu、AppleALC、VirtualSMC、WhateverGreen、AirportBrcmFixup
+更新 `Lilu`、`AppleALC`、`VirtualSMC`、`WhateverGreen`、`AirportBrcmFixup`
 
-删除 AppleBacklightFixup，因为似乎已经集成到了 WhateverGreen 里了
+删除 `AppleBacklightFixup`，已经集成到了 WhateverGreen 里
 
 更新 Clover 到 4813，但是 Clover Configurator 里还是显示 4603
 
