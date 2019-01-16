@@ -1,5 +1,9 @@
 ##  更新记录
 
+### 1.16
+
+更新 `AirportBrcmFixup` 到 `1.1.9` 并加上 `brcmfx-country=#a` 以解决 WiFi 5G 速度问题，见 [issues#12](https://github.com/xxxzc/xps15-9550-macos/issues/12)，感谢 @CyJaySong 。
+
 ### 1.4
 
 #### Kext

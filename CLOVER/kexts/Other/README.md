@@ -1,6 +1,6 @@
 |                             Kext                             | Version |
 | :----------------------------------------------------------: | ------- |
-| [AirportBrcmFixup](https://github.com/acidanthera/AirportBrcmFixup) | 1.1.8   |
+| [AirportBrcmFixup](https://github.com/acidanthera/AirportBrcmFixup) | 1.1.9   |
 |     [AppleALC](https://github.com/acidanthera/AppleALC)      | 1.3.4   |
 | [AppleBacklightFixup](https://bitbucket.org/RehabMan/applebacklightfixup) | 1013    |
 | [BrcmFirmwareData+BrcmPatchRAM2](https://bitbucket.org/RehabMan/os-x-brcmpatchram/downloads/) | 0505    |

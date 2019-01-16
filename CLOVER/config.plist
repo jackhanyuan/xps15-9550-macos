@@ -15,7 +15,7 @@
 				<key>FixADP1</key>
 				<true/>
 				<key>FixAirport</key>
-				<true/>
+				<false/>
 				<key>FixMutex</key>
 				<true/>
 			</dict>
@@ -81,7 +81,7 @@
 					<key>Comment</key>
 					<string>Change HECI to IMEI (so Mac OS can natively use the Management Engine)</string>
 					<key>Disabled</key>
-					<false/>
+					<true/>
 					<key>Find</key>
 					<data>
 					SEVDSQ==
@@ -270,7 +270,7 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>-v agdpmod=vit9696 darkwake=no</string>
+		<string>agdpmod=vit9696 brcmfx-country=#a -v darkwake=no</string>
 		<key>Debug</key>
 		<false/>
 		<key>DefaultVolume</key>
@@ -309,10 +309,6 @@
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
 			<dict>
-				<key>AAPL,GfxYTile</key>
-				<data>
-				AQAAAA==
-				</data>
 				<key>AAPL,ig-platform-id</key>
 				<data>
 				AAAbGQ==
@@ -328,6 +324,10 @@
 				<key>framebuffer-patch-enable</key>
 				<data>
 				AQAAAA==
+				</data>
+				<key>framebuffer-unifiedmem</key>
+				<data>
+				AAAAgA==
 				</data>
 			</dict>
 		</dict>
@@ -359,7 +359,7 @@
 			<true/>
 		</dict>
 		<key>Theme</key>
-		<string>Nightwish256</string>
+		<string>Nightwish</string>
 	</dict>
 	<key>Graphics</key>
 	<dict>
@@ -414,24 +414,6 @@
 		</array>
 		<key>KextsToPatch</key>
 		<array>
-			<dict>
-				<key>Comment</key>
-				<string>Enable BT4LE-Handoff-Hotspot</string>
-				<key>Disabled</key>
-				<false/>
-				<key>Find</key>
-				<data>
-				SIX/dEdIiwc=
-				</data>
-				<key>InfoPlistPatch</key>
-				<false/>
-				<key>Name</key>
-				<string>IOBluetoothFamily</string>
-				<key>Replace</key>
-				<data>
-				Qb4PAAAA60Q=
-				</data>
-			</dict>
 			<dict>
 				<key>Comment</key>
 				<string>Prevent Apple I2C kexts from attaching to I2C controllers, credit CoolStar</string>
