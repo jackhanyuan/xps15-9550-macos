@@ -12,10 +12,12 @@
 			<false/>
 			<key>Fixes</key>
 			<dict>
+				<key>AddDTGP</key>
+				<true/>
 				<key>FixADP1</key>
 				<true/>
 				<key>FixAirport</key>
-				<false/>
+				<true/>
 				<key>FixMutex</key>
 				<true/>
 			</dict>
@@ -79,16 +81,16 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>Change HECI to IMEI (so Mac OS can natively use the Management Engine)</string>
+					<string>Rename HPET to XPET, pair with SSDT-HPET.aml</string>
 					<key>Disabled</key>
-					<true/>
+					<false/>
 					<key>Find</key>
 					<data>
-					SEVDSQ==
+					SFBFVA==
 					</data>
 					<key>Replace</key>
 					<data>
-					SU1FSQ==
+					WFBFVA==
 					</data>
 				</dict>
 				<dict>
@@ -135,16 +137,30 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change Method(GPRW,2,N) to XPRW, pair with SSDT-GPRW.aml</string>
+					<string>Rename method UPRW to XPRW and use with SSDT-UPRW.aml</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
 					<data>
-					R1BSVwI=
+					FBJVUFJXAHA=
 					</data>
 					<key>Replace</key>
 					<data>
-					WFBSVwI=
+					FBJYUFJXAHA=
+					</data>
+				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>Rename method GPRW to YPRW and use with SSDT-UPRW.aml</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					FEAGR1BSVwI=
+					</data>
+					<key>Replace</key>
+					<data>
+					FEAGWVBSVwI=
 					</data>
 				</dict>
 				<dict>
@@ -239,6 +255,20 @@
 					pABZVEJUVEJTRUNQR04=
 					</data>
 				</dict>
+				<dict>
+					<key>Comment</key>
+					<string>Change HDAS to HDEF, pair with SSDT-HDEF.aml</string>
+					<key>Disabled</key>
+					<false/>
+					<key>Find</key>
+					<data>
+					SERBUw==
+					</data>
+					<key>Replace</key>
+					<data>
+					SERFRg==
+					</data>
+				</dict>
 			</array>
 		</dict>
 		<key>DropTables</key>
@@ -270,7 +300,7 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>agdpmod=vit9696 brcmfx-country=#a -v darkwake=no</string>
+		<string>agdpmod=vit9696 -v darkwake=no</string>
 		<key>Debug</key>
 		<false/>
 		<key>DefaultVolume</key>
@@ -304,7 +334,7 @@
 			<dict>
 				<key>layout-id</key>
 				<data>
-				SAAAAA==
+				HAAAAA==
 				</data>
 			</dict>
 			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
@@ -336,6 +366,8 @@
 	<dict>
 		<key>#ScreenResolution</key>
 		<string>1920x1080</string>
+		<key>EmbeddedThemeType</key>
+		<string>Dark</string>
 		<key>Hide</key>
 		<array>
 			<string>Recovery</string>
@@ -409,45 +441,6 @@
 				<key>Replace</key>
 				<data>
 				igKEwOtC
-				</data>
-			</dict>
-		</array>
-		<key>KextsToPatch</key>
-		<array>
-			<dict>
-				<key>Comment</key>
-				<string>Prevent Apple I2C kexts from attaching to I2C controllers, credit CoolStar</string>
-				<key>Disabled</key>
-				<false/>
-				<key>Find</key>
-				<data>
-				SU9LaXQ=
-				</data>
-				<key>InfoPlistPatch</key>
-				<true/>
-				<key>Name</key>
-				<string>com.apple.driver.AppleIntelLpssI2C</string>
-				<key>Replace</key>
-				<data>
-				SU9LaXM=
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Prevent Apple I2C kexts from attaching to I2C controllers, credit CoolStar</string>
-				<key>Disabled</key>
-				<false/>
-				<key>Find</key>
-				<data>
-				SU9LaXQ=
-				</data>
-				<key>InfoPlistPatch</key>
-				<true/>
-				<key>Name</key>
-				<string>com.apple.driver.AppleIntelLpssI2CController</string>
-				<key>Replace</key>
-				<data>
-				SU9LaXM=
 				</data>
 			</dict>
 		</array>
