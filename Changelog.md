@@ -1,5 +1,27 @@
 ##  更新记录
 
+### 2.9
+
+#### Kext
+
+更新 `Lilu`、`AppleALC` 和 `CPUFriend`
+
+加回 `NoTouchID`，13,3 在安装的时候还是会出现 TouchID 设置
+
+#### SSDT
+
+将 `SSDT-GPRW` 换成 `SSDT-UPRW` （据 [issue#14](https://github.com/xxxzc/xps15-9550-macos/issues/14)）
+
+加回 `SSDT-HPET`、`SSDT-HDEF` 和 `SSDT-MEM2` 
+
+#### Clover
+
+更新 Clover 到 4871，更新 drivers
+
+#### 其他
+
+更新 README.md
+
 ### 1.16
 
 更新 `AirportBrcmFixup` 到 `1.1.9` 并加上 `brcmfx-country=#a` 以解决 WiFi 5G 速度问题，见 [issues#12](https://github.com/xxxzc/xps15-9550-macos/issues/12)，感谢 @CyJaySong 。
