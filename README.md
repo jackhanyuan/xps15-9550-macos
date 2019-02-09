@@ -47,7 +47,7 @@ Credit @gooodwin for this plugin and @daliansky for the `install/uninstall.comma
 
 ### Non-Retina Display
 
-####Font Rendering
+#### Font Rendering
 
 ```shell
 defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
