@@ -4,7 +4,6 @@
 | SSDT-DDGPU    | disable dGPU                  |                                                              |
 | SSDT-DeepIDLE | deep idle                     |                                                              |
 | SSDT-DMAC     | DMA Controller                |                                                              |
-| SSDT-HDEF     | to load Audio                 | Change HDAS to HDEF                                          |
 | SSDT-HPET     | disable HPET device           | Rename HPET to XPET                                          |
 | SSDT-I2C      | I2C Device (Interrupts)       | Change _STA to XSTA<br />Change _CRS to XCRS                 |
 | SSDT-LPC      | force AppleLPC to load        |                                                              |

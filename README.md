@@ -2,7 +2,7 @@
 
 `XPS15-9550`  `i5-6300HQ`  `16GB`  `PM961 512G`  `4K Display`  `1080P Monitor`
 
-`10.14.3 18D42`  `MacBookPro13,3 `
+`10.14.3 18D109`  `MacBookPro13,3 `
 
 ### Untested 
 
@@ -13,7 +13,9 @@
 
 ## Note
 
-You may refer to [wmchris's tutorial](https://github.com/wmchris/DellXPS15-9550-OSX) for the installation guide and solutions to some common issues. But note that please create an issue **in my repository** if you encounter any problem when **using my files or following my tutorial** ( Please don't disturb others ). My writing in English is poooooor:(, but I can read :).
+You may refer to [wmchris's tutorial](https://github.com/wmchris/DellXPS15-9550-OSX) for the installation guide and solutions to some common issues. 
+
+But note that please create an issue **in my repository** if you encounter any problem when **using my files or following my tutorial** ( Please don't disturb others ). My writing in English is poooooor:(, but I can read :).
 
 *After switching to or updating Clover files(Especially the drivers), it's a good action to reset NVRAM (press `F11` in Clover GUI and then your laptop will reboot) to prevent some booting issues.
 
@@ -41,9 +43,9 @@ Please uncheck all options (except `Prevent computer from sleeping...`) in the `
 
 ### Headphone
 
-You may need `PostInstall/ALC298PluginFix` to make headphone works properly.
+@qeeqez found layout-id 30 is good to drive headphone without PluginFix([Overall Audio State](https://github.com/daliansky/XiaoMi-Pro/issues/96)), and it also works for me. 
 
-Credit @gooodwin for this plugin and @daliansky for the `install/uninstall.command`
+So, you can uninstall `ALC298PluginFix`(if installed) and check whether headphone is still working properly, if not, you have to put [CodecCommander](https://bitbucket.org/RehabMan/os-x-eapd-codec-commander/downloads/)  back to `kexts/Other` and reinstall `ALC298PluginFix`.
 
 ### Non-Retina Display
 

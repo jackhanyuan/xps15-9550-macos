@@ -1,6 +1,13 @@
 ##  更新记录
 
-### 2.9
+### 2.11
+
+#### Audio
+
+1. 参考 [Overall Audio State](https://github.com/daliansky/XiaoMi-Pro/issues/96) 将 layout-id 改为 30 以解决耳机失真
+2. 删除 `CodecCommander` 
+
+现在你可以卸载 `ALC298PluginFix` 看看耳机是否能正常工作。
 
 #### Kext
 
@@ -12,7 +19,7 @@
 
 将 `SSDT-GPRW` 换成 `SSDT-UPRW` （据 [issue#14](https://github.com/xxxzc/xps15-9550-macos/issues/14)）
 
-加回 `SSDT-HPET`、`SSDT-HDEF` 和 `SSDT-MEM2` 
+加回 `SSDT-HPET`和 `SSDT-MEM2` 
 
 #### Clover
 

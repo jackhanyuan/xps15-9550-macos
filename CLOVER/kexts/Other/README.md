@@ -5,7 +5,6 @@
 | [AppleBacklightFixup](https://bitbucket.org/RehabMan/applebacklightfixup) | 1013    |
 | [BrcmFirmwareData+BrcmPatchRAM2](https://bitbucket.org/RehabMan/os-x-brcmpatchram/downloads/) | 0505    |
 | [BT4LEContiunityFixup](https://github.com/acidanthera/BT4LEContiunityFixup) | 1.1.2   |
-| [CodecCommander](https://bitbucket.org/RehabMan/os-x-eapd-codec-commander/downloads/) | 1003    |
 | [CPUFriend+CPUFriendDataProvider](https://github.com/acidanthera/CPUFriend) | 1.1.6   |
 |         [Lilu](https://github.com/acidanthera/Lilu)          | 1.3.3   |
 | [NoTouchID](https://github.com/al3xtjames/NoTouchID/releases) | 1.0.1   |
