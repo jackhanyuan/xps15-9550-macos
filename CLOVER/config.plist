@@ -12,6 +12,8 @@
 			<false/>
 			<key>Fixes</key>
 			<dict>
+				<key>AddDTGP</key>
+				<true/>
 				<key>FixADP1</key>
 				<true/>
 				<key>FixAirport</key>
@@ -76,16 +78,6 @@
 					<data>
 					RUNfXw==
 					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>Change HDAS to HDEF</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>SERBUw==</data>
-					<key>Replace</key>
-					<data>SERFRg==</data>
 				</dict>
 				<dict>
 					<key>Comment</key>
@@ -284,7 +276,7 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>agdpmod=vit9696 -v darkwake=0</string>
+		<string>brcmfx-country=#a agdpmod=vit9696 darkwake=0</string>
 		<key>Debug</key>
 		<false/>
 		<key>DefaultVolume</key>
@@ -344,6 +336,10 @@
 				<data>
 				AQAAAA==
 				</data>
+				<key>framebuffer-unifiedmem</key>
+				<data>
+				AAAAgA==
+				</data>
 			</dict>
 		</dict>
 		<key>USB</key>
@@ -401,6 +397,13 @@
 		<false/>
 		<key>DellSMBIOSPatch</key>
 		<true/>
+		<key>KernelPm</key>
+		<true/>
+		<key>ForceKextsToLoad</key>
+		<array>
+			<string>\System\Library\Extensions\IONetworkingFamily.kext</string>
+			<string>\System\Library\Extensions\IOGraphicsFamily.kext</string>
+		</array>
 		<key>KernelToPatch</key>
 		<array>
 			<dict>

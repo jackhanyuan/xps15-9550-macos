@@ -3,4 +3,7 @@ APPLE/
 ubuntu/
 Microsoft/
 Boot/
+fedora/
 ._*
+Clover_Install_Log.txt
+Boot/BOOTX64.efi

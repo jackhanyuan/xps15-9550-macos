@@ -1,5 +1,11 @@
 ##  更新记录
 
+### 3.7
+
+更新 `Lilu`，增加 `RTCMemoryFixup`
+
+更新 Clover 到 4895
+
 ### 2.11
 
 #### Audio
