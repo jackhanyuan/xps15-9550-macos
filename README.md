@@ -1,3 +1,5 @@
+**I have been switching back to Windows 10.**
+
 ### Laptop Specs
 
 `XPS15-9550`  `i5-6300HQ`  `16GB`  `PM961 512G`  `4K Display`  `1080P Monitor`
