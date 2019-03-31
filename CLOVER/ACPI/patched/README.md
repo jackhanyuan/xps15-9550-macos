@@ -15,11 +15,10 @@
 | SSDT-RMCF     | control many SSDTs            | Change GFX0 to IGPU                                          |
 | SSDT-SATA     | SATA Controller               | Change SAT0 to SATA                                          |
 | SSDT-SMBUS    | identifies the SMBus          |                                                              |
-| SSDT-TYPC     | Type-C hot-plug               | Rename _RMV to XRMV                                          |
+| SSDT-THBT     | Type-C hot-plug               |                                                              |
 | SSDT-UPRW     | disable "wake on USB"         | Rename method UPRW to XPRW<br />Rename method GPRW to YPRW   |
 | SSDT-USBX     | set USB current               |                                                              |
 | SSDT-XOSI     | VoodooI2C                     | Change OSID to XSID<br />Change _OSI to XOSI                 |
-| SSDT-YTBT     | DSDT recursion issue          | ~~Rename XTBT to YTBT~~                                      |
 
 ### Credits
 
