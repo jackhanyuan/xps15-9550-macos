@@ -1,7 +1,7 @@
 |                             Kext                             | Version |
 | :----------------------------------------------------------: | ------- |
 | [AirportBrcmFixup](https://github.com/acidanthera/AirportBrcmFixup) | 1.1.9   |
-|     [AppleALC](https://github.com/acidanthera/AppleALC)      | 1.3.5   |
+|     [AppleALC](https://github.com/acidanthera/AppleALC)      | 1.3.6   |
 | [AppleBacklightFixup](https://bitbucket.org/RehabMan/applebacklightfixup) | 1013    |
 | [BrcmFirmwareData+BrcmPatchRAM2](https://bitbucket.org/RehabMan/os-x-brcmpatchram/downloads/) | 0505    |
 | [BT4LEContiunityFixup](https://github.com/acidanthera/BT4LEContiunityFixup) | 1.1.2   |
@@ -9,11 +9,11 @@
 | [Lilu](https://github.com/acidanthera/Lilu/releases/latest)  | 1.3.4   |
 | [NoTouchID](https://github.com/al3xtjames/NoTouchID/releases) | 1.0.1   |
 | [RTCMemoryFixup](https://github.com/acidanthera/RTCMemoryFixup/releases) | 1.0.3   |
-| [VirtualSMC+SMCBatteryManager+SMCProcessor+SMCSuperIO](https://github.com/acidanthera/VirtualSMC) | 1.0.2   |
+| [VirtualSMC+SMCBatteryManager+SMCProcessor](https://github.com/acidanthera/VirtualSMC) | 1.0.2   |
 | [USBPorts](https://www.tonymacx86.com/threads/release-intel-fb-patcher-v1-4-5.254559/) | 1.5.7   |
 | [VoodooI2C+VoodooI2CHID](https://github.com/alexandred/VoodooI2C) | 2.1.4   |
 | [VoodooPS2Controller](https://bitbucket.org/RehabMan/os-x-voodoo-ps2-controller/downloads/) | 1008    |
-| [WhateverGreen](https://github.com/acidanthera/WhateverGreen) | 1.2.6   |
+| [WhateverGreen](https://github.com/acidanthera/WhateverGreen) | 1.2.7   |
 
 ### About USBPorts.kext
 

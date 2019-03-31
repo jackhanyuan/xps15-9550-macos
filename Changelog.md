@@ -1,5 +1,23 @@
 ##  更新记录
 
+### 3.31
+
+#### Kext
+
+更新 `AppleALC`、`WhateverGreen`、`Lilu`
+
+使用 [the-darkvoid/XPS9360-macOS](<https://github.com/the-darkvoid/XPS9360-macOS/tree/master/kexts/VoodooI2C.kext>) 的 `VoodooI2C`
+
+删除 `VoodooPS2Controller` 的鼠标插件，会与 MOS 冲突，导致鼠标滚动卡顿
+
+#### 其他
+
+使用 `SSDT-THBT` 代替 `SSDT-TYPC+SSDT-YTBT`
+
+更新 Clover 到 4910
+
+更新 `AptioMemeoryFix`
+
 ### 3.7
 
 更新 `Lilu`，增加 `RTCMemoryFixup`
@@ -30,10 +48,6 @@
 #### Clover
 
 更新 Clover 到 4871，更新 drivers
-
-#### 其他
-
-更新 README.md
 
 ### 1.16
 
@@ -130,18 +144,3 @@ HSxx ports connected to USB3 ports should be set to USB3
 
 换用这个的主要原因之前的 USB 接口有问题。
 
-### 9.30
-
-使用 [Intel FB-Patcher v1.4.3](https://www.tonymacx86.com/threads/release-intel-fb-patcher-v1-4-3.254559/) 和 [[Guide] Intel Framebuffer patching using WhateverGreen](https://www.tonymacx86.com/threads/guide-intel-framebuffer-patching-using-whatevergreen.256490/)，生成了 `HD530` 的 framebuffer。使用这个配合 `WhateverGreen.kext` 后，不再需要任何跟 IGPU 和 HDMI 有关的 kext、补丁以及 Config 配置，当然禁用独显的补丁 `SSDT-DDGPU.aml` 还是需要的。
-
-使用 [Intel FB-Patcher v1.4.3](https://www.tonymacx86.com/threads/release-intel-fb-patcher-v1-4-3.254559/) 生成 `USBPort.kext` 用来替换  `USBInjectAll.kext` 和 `SSDT-UIAC.aml` 删了。
-
-使用 [CPUFriend的教程](https://github.com/acidanthera/CPUFriend/blob/master/Instructions.md) 以及 [6300hq 的 plist](https://github.com/corenel/XPS9550-macOS/commit/7089feb37fbcf841c4cf7196153a2270185bc29c) 生成 `CPUFriendDataProvider.kext`。
-
-### 9.29
-
-基于 [jardenliu/XPS15-9560-Mojave](https://github.com/jardenliu/XPS15-9560-Mojave) 。添加 `VirtualSMC` 删除 `FakeSMC*`
-
-- 移除 `SMCLightSensor.kext`，用于获取笔记本光感信息，没啥必要（默认会在 Console 疯狂输出）
-- 移除 `SSDT-BATC.aml`。`SMCBatteryManager.text` 不需要这个补丁
-- 从 [scottsanett/M5510-4K-High-Sierra-Installation](https://github.com/scottsanett/M5510-4K-High-Sierra-Installation) 拿了一些与 9550 有关的文件
